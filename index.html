@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bulut Bilişim Testi</title>
+  <style>
+    :root {
+      --bg: #f4f6f8;
+      --card: #ffffff;
+      --text: #1a1d21;
+      --muted: #5c6370;
+      --border: #e2e6ea;
+      --correct: #1e8e3e;
+      --correct-bg: #e8f5e9;
+      --wrong: #c62828;
+      --wrong-bg: #ffebee;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --radius: 12px;
+      --shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .app {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 1.25rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    header h1 {
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin: 0 0 0.25rem;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .state-loading,
+    .state-error {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--muted);
+    }
+
+    .state-error {
+      color: var(--wrong);
+    }
+
+    .progress-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .progress-label {
+      font-size: 0.875rem;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .progress-bar {
+      flex: 1;
+      height: 6px;
+      background: var(--border);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: var(--accent);
+      border-radius: 999px;
+      transition: width 0.25s ease;
+    }
+
+    .question-text {
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin: 0 0 1.25rem;
+    }
+
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .option-btn {
+      display: block;
+      width: 100%;
+      text-align: left;
+      padding: 0.85rem 1rem;
+      font-size: 0.95rem;
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      background: var(--card);
+      color: var(--text);
+      cursor: pointer;
+      transition: border-color 0.15s, background 0.15s;
+    }
+
+    .option-btn:hover:not(:disabled) {
+      border-color: var(--accent);
+      background: #f8fafc;
+    }
+
+    .option-btn:disabled {
+      cursor: default;
+    }
+
+    .option-btn.correct {
+      border-color: var(--correct);
+      background: var(--correct-bg);
+      color: #0d4718;
+    }
+
+    .option-btn.wrong {
+      border-color: var(--wrong);
+      background: var(--wrong-bg);
+      color: #7f1d1d;
+    }
+
+    .option-prefix {
+      font-weight: 600;
+      margin-right: 0.35rem;
+      color: var(--muted);
+    }
+
+    .option-btn.correct .option-prefix,
+    .option-btn.wrong .option-prefix {
+      color: inherit;
+      opacity: 0.85;
+    }
+
+    .explanation {
+      margin-top: 1rem;
+      padding: 1rem;
+      background: #f0f4f8;
+      border-radius: 10px;
+      border-left: 4px solid var(--accent);
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+
+    .explanation[hidden] {
+      display: none !important;
+    }
+
+    .explanation-title {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .actions {
+      margin-top: auto;
+      padding-top: 1.25rem;
+    }
+
+    .btn-primary {
+      width: 100%;
+      padding: 0.9rem 1rem;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+      background: var(--accent);
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+
+    .btn-primary:hover:not(:disabled) {
+      background: var(--accent-hover);
+    }
+
+    .btn-primary:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .quiz-view[hidden],
+    .results-view[hidden] {
+      display: none !important;
+    }
+
+    .results-view {
+      text-align: center;
+    }
+
+    .results-chart-wrap {
+      display: flex;
+      justify-content: center;
+      margin: 1.5rem 0;
+    }
+
+    .results-chart {
+      width: 180px;
+      height: 180px;
+    }
+
+    .results-chart circle.bg {
+      fill: none;
+      stroke: var(--border);
+      stroke-width: 12;
+    }
+
+    .results-chart circle.fg {
+      fill: none;
+      stroke: var(--accent);
+      stroke-width: 12;
+      stroke-linecap: round;
+      transform: rotate(-90deg);
+      transform-origin: 50% 50%;
+      transition: stroke-dashoffset 0.6s ease;
+    }
+
+    .results-percent {
+      font-size: 2rem;
+      font-weight: 700;
+      fill: var(--text);
+    }
+
+    .results-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1rem 0 1.5rem;
+      text-align: center;
+    }
+
+    .stat-box {
+      padding: 1rem;
+      border-radius: 10px;
+      background: var(--bg);
+    }
+
+    .stat-value {
+      font-size: 1.75rem;
+      font-weight: 700;
+    }
+
+    .stat-value.good {
+      color: var(--correct);
+    }
+
+    .stat-value.bad {
+      color: var(--wrong);
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .btn-secondary {
+      width: 100%;
+      padding: 0.85rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--accent);
+      background: transparent;
+      border: 2px solid var(--accent);
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 0.5rem;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(37, 99, 235, 0.08);
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Bulut Bilişim Testi</h1>
+    </header>
+
+    <div class="card">
+      <div id="stateLoading" class="state-loading">Sorular yükleniyor…</div>
+      <div id="stateError" class="state-error" hidden></div>
+
+      <div id="quizView" class="quiz-view" hidden>
+        <div class="progress-row">
+          <span id="progressLabel" class="progress-label"></span>
+          <div class="progress-bar" aria-hidden="true">
+            <div id="progressFill" class="progress-fill" style="width: 0%"></div>
+          </div>
+        </div>
+        <p id="questionText" class="question-text"></p>
+        <div id="optionsContainer" class="options"></div>
+        <div id="explanationBox" class="explanation" hidden>
+          <div class="explanation-title">Açıklama</div>
+          <div id="explanationText"></div>
+        </div>
+        <div class="actions">
+          <button type="button" id="btnNext" class="btn-primary" disabled>Sonraki Soru</button>
+        </div>
+      </div>
+
+      <div id="resultsView" class="results-view" hidden>
+        <h2 style="margin: 0 0 0.5rem; font-size: 1.25rem;">Test Tamamlandı</h2>
+        <p style="margin: 0; color: var(--muted); font-size: 0.9rem;">Sonuçların özeti</p>
+        <div class="results-chart-wrap">
+          <svg class="results-chart" viewBox="0 0 100 100" aria-hidden="true">
+            <circle class="bg" cx="50" cy="50" r="40" />
+            <circle id="resultRing" class="fg" cx="50" cy="50" r="40" stroke-dasharray="251.33" stroke-dashoffset="251.33" />
+            <text class="results-percent" x="50" y="54" text-anchor="middle" id="resultPercentText">0%</text>
+          </svg>
+        </div>
+        <div class="results-stats">
+          <div class="stat-box">
+            <div id="statCorrect" class="stat-value good">0</div>
+            <div class="stat-label">Doğru</div>
+          </div>
+          <div class="stat-box">
+            <div id="statWrong" class="stat-value bad">0</div>
+            <div class="stat-label">Yanlış</div>
+          </div>
+        </div>
+        <button type="button" id="btnRestart" class="btn-secondary">Yeniden Başlat</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const LABELS = ["A", "B", "C", "D"];
+
+      const elLoading = document.getElementById("stateLoading");
+      const elError = document.getElementById("stateError");
+      const quizView = document.getElementById("quizView");
+      const resultsView = document.getElementById("resultsView");
+      const progressLabel = document.getElementById("progressLabel");
+      const progressFill = document.getElementById("progressFill");
+      const questionText = document.getElementById("questionText");
+      const optionsContainer = document.getElementById("optionsContainer");
+      const explanationBox = document.getElementById("explanationBox");
+      const explanationText = document.getElementById("explanationText");
+      const btnNext = document.getElementById("btnNext");
+      const resultRing = document.getElementById("resultRing");
+      const resultPercentText = document.getElementById("resultPercentText");
+      const statCorrect = document.getElementById("statCorrect");
+      const statWrong = document.getElementById("statWrong");
+      const btnRestart = document.getElementById("btnRestart");
+
+      let questions = [];
+      let currentIndex = 0;
+      let correctCount = 0;
+      let wrongCount = 0;
+      let answered = false;
+
+      const CIRC = 2 * Math.PI * 40;
+
+      function showLoading(show) {
+        elLoading.hidden = !show;
+      }
+
+      function showError(msg) {
+        showLoading(false);
+        elError.textContent = msg;
+        elError.hidden = false;
+        quizView.hidden = true;
+        resultsView.hidden = true;
+      }
+
+      function setRingPercent(percent) {
+        const p = Math.max(0, Math.min(100, percent));
+        const offset = CIRC * (1 - p / 100);
+        resultRing.setAttribute("stroke-dasharray", String(CIRC));
+        resultRing.setAttribute("stroke-dashoffset", String(offset));
+        resultPercentText.textContent = Math.round(p) + "%";
+      }
+
+      function renderQuestion() {
+        const q = questions[currentIndex];
+        const total = questions.length;
+        const n = currentIndex + 1;
+
+        progressLabel.textContent = "Soru " + n + " / " + total;
+        progressFill.style.width = total ? ((n / total) * 100).toFixed(2) + "%" : "0%";
+
+        questionText.textContent = q.soru;
+        optionsContainer.innerHTML = "";
+        explanationBox.hidden = true;
+        explanationText.textContent = "";
+        btnNext.disabled = true;
+        answered = false;
+
+        (q.secenekler || []).forEach(function (text, idx) {
+          const btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "option-btn";
+          btn.dataset.index = String(idx);
+          const span = document.createElement("span");
+          span.className = "option-prefix";
+          span.textContent = LABELS[idx] + ")";
+          btn.appendChild(span);
+          btn.appendChild(document.createTextNode(text));
+          btn.addEventListener("click", onOptionClick);
+          optionsContainer.appendChild(btn);
+        });
+      }
+
+      function onOptionClick(e) {
+        const btn = e.currentTarget;
+        if (answered) return;
+        answered = true;
+
+        const selected = parseInt(btn.dataset.index, 10);
+        const q = questions[currentIndex];
+        const correctIdx = q.dogru_cevap_indeksi;
+
+        const buttons = optionsContainer.querySelectorAll(".option-btn");
+        buttons.forEach(function (b) {
+          b.disabled = true;
+          b.removeEventListener("click", onOptionClick);
+        });
+
+        if (selected === correctIdx) {
+          btn.classList.add("correct");
+          correctCount++;
+        } else {
+          btn.classList.add("wrong");
+          buttons[correctIdx].classList.add("correct");
+          wrongCount++;
+        }
+
+        explanationText.textContent = q.aciklama || "";
+        explanationBox.hidden = false;
+        btnNext.disabled = false;
+
+        const isLast = currentIndex === questions.length - 1;
+        btnNext.textContent = isLast ? "Sonuçları Gör" : "Sonraki Soru";
+      }
+
+      function showResults() {
+        quizView.hidden = true;
+        resultsView.hidden = false;
+
+        const total = questions.length;
+        const pct = total ? (correctCount / total) * 100 : 0;
+
+        statCorrect.textContent = String(correctCount);
+        statWrong.textContent = String(wrongCount);
+        setRingPercent(pct);
+      }
+
+      function onNext() {
+        if (!answered) return;
+        if (currentIndex >= questions.length - 1) {
+          showResults();
+          return;
+        }
+        currentIndex++;
+        renderQuestion();
+        btnNext.textContent = "Sonraki Soru";
+      }
+
+      function restart() {
+        currentIndex = 0;
+        correctCount = 0;
+        wrongCount = 0;
+        answered = false;
+        resultsView.hidden = true;
+        quizView.hidden = false;
+        renderQuestion();
+        btnNext.textContent = "Sonraki Soru";
+      }
+
+      btnNext.addEventListener("click", onNext);
+      btnRestart.addEventListener("click", restart);
+
+      fetch("./sorular.json")
+        .then(function (res) {
+          if (!res.ok) throw new Error("Dosya okunamadı (" + res.status + ")");
+          return res.json();
+        })
+        .then(function (data) {
+          if (!Array.isArray(data) || data.length === 0) {
+            showError("Soru listesi boş veya geçersiz.");
+            return;
+          }
+          questions = data;
+          showLoading(false);
+          elError.hidden = true;
+          quizView.hidden = false;
+          renderQuestion();
+        })
+        .catch(function () {
+          showError(
+            "Sorular yüklenemedi. Bu sayfayı bir yerel sunucu üzerinden açın (ör. main klasöründe: python -m http.server) veya sorular.json ile aynı kökten sunun."
+          );
+        });
+    })();
+  </script>
+</body>
+</html>

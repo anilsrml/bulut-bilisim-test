@@ -1,6 +1,8 @@
 # Bulut Bilişim Testi
 
-`main/` klasöründe tek sayfalık bir quiz arayüzü (`index.html`) ve soru verisi (`sorular.json`) bulunur.
+Canlı site (GitHub Pages) **depo kökündeki** `index.html` ve `sorular.json` dosyalarından açılır. Kökte `index.html` olmazsa GitHub bazen README’yi ana sayfa gibi gösterir; bu yüzden uygulama dosyaları kök dizindedir.
+
+Yerel geliştirme için yedek/aynı içerik `main/` altında da bulunabilir.
 
 ## GitHub Pages ile canlıya alma
 
@@ -34,9 +36,9 @@ Birkaç dakika içinde şu adresten erişebilirsiniz:
 
 `https://KULLANICI_ADI.github.io/REPO_ADI/`
 
-Depo **kullanıcı adı ile aynı** özel site ise (`KULLANICI_ADI.github.io`), kök adres doğrudan `https://KULLANICI_ADI.github.io/` olur; yine de `main/` içeriği bu iş akışıyla köke yayınlanır.
+Depo **kullanıcı adı ile aynı** özel site ise (`KULLANICI_ADI.github.io`), kök adres doğrudan `https://KULLANICI_ADI.github.io/` olur.
 
 ### Notlar
 
-- İş akışı yalnızca `main/` klasörünü yayınlar; `index.html` içindeki `fetch('./sorular.json')` bu yüzden çalışır.
+- İş akışı tüm depoyu site kökü olarak yayınlar; kökteki `index.html` ana sayfadır, `fetch('./sorular.json')` aynı kökten yüklenir.
 - Dal adınız `master` ise `.github/workflows/github-pages.yml` dosyasında `branches: ["main"]` satırını `["master"]` olarak değiştirin veya dalı `main` olarak yeniden adlandırın.

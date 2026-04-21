@@ -1,4 +1,4 @@
-# GitHub Pages: main/ klasöründeki statik siteyi (index.html + sorular.json) yayınlar.
+# GitHub Pages: depo kökündeki index.html + sorular.json yayınlanır (README ana sayfa olmasın diye kökte index gerekir).
 # Depo Ayarları → Pages → Source: GitHub Actions seçilmelidir.
 
 name: Deploy GitHub Pages
@@ -32,7 +32,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: main
+          path: .
 
       - name: Deploy to GitHub Pages
         id: deployment

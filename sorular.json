@@ -1,0 +1,1102 @@
+[
+  {
+    "soru": "İnternet ağ mimarisini oluşturmak için kullanılan iki temel bileşen aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Bağlantısız paket anahtarlama ve yönlendirici tabanlı bağlantı",
+      "TCP ve UDP protokolleri",
+      "LAN ve WAN ağları",
+      "HTTP ve FTP servisleri"
+    ],
+    "dogru_cevap_indeksi": 0,
+    "aciklama": "Kaynak metne göre internet ağ mimarisinin iki temel bileşeni datagram ağları (paket anahtarlama) ve yönlendiricilerdir."
+  },
+  {
+    "soru": "Datagram ağlarında (Bağlantısız Paket Anahtarlama) her paket hangi bilgileri taşımak zorundadır?",
+    "secenekler": [
+      "Sadece kullanıcı verisi",
+      "IP veya MAC adresi gibi konum bilgileri",
+      "Yalnızca hata kontrol kodları",
+      "Bağlantı kurulum onay mesajı"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Her paket, ağ düğümleri tarafından işlenebilmesi için IP veya MAC adresi gibi gerekli konum bilgilerini taşır."
+  },
+  {
+    "soru": "Yönlendiriciler (Router) hakkında aşağıdakilerden hangisi yanlıştır?",
+    "secenekler": [
+      "Paketleri ilettiği birden fazla ağa bağlıdırlar",
+      "Ağ trafiğini yönetirler",
+      "Paket teslimi için en verimli atlamayı ölçerler",
+      "Tüm paketleri tek bir sabit yoldan iletmek zorundadırlar"
+    ],
+    "dogru_cevap_indeksi": 3,
+    "aciklama": "Yönlendiriciler her paketi ayrı işleyebilir ve o anki ağ topolojisine göre en verimli yolu belirler; tek bir sabit yol zorunluluğu yoktur."
+  },
+  {
+    "soru": "TCP/IP modelinde 'Fiziksel Ağ' katmanını oluşturan iki temel bileşen nedir?",
+    "secenekler": [
+      "Taşıma Katmanı ve Uygulama Katmanı",
+      "İnternet Katmanı ve Fiziksel Katman",
+      "Veri Bağlantı Katmanı (Data Link) ve Fiziksel Katman",
+      "IP Katmanı ve Ethernet Katmanı"
+    ],
+    "dogru_cevap_indeksi": 2,
+    "aciklama": "Fiziksel ağ, komşu düğümler arası transferi kontrol eden Veri Bağlantı Katmanı ve bit düzeyinde iletim yapan Fiziksel Katman'dan oluşur."
+  },
+  {
+    "soru": "İnternet Katmanı'nda verinin 'Datagram' halini alması için veriye ne eklenir?",
+    "secenekler": [
+      "Şifreleme anahtarları",
+      "Hedef veya kaynak IP adresleri",
+      "Kullanıcı şifreleri",
+      "Dosya uzantıları"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Bu katmanda veriye IP adresleri eklenerek hangi bilgisayara gideceği belirlenir ve paket Datagram adını alır."
+  },
+  {
+    "soru": "Aşağıdakilerden hangisi Taşıma Katmanı (Transport Layer) protokollerinden biridir?",
+    "secenekler": [
+      "HTTP",
+      "SMTP",
+      "TCP",
+      "IP"
+    ],
+    "dogru_cevap_indeksi": 2,
+    "aciklama": "TCP (İletim Kontrol Protokolü) ve UDP, taşıma katmanında uçtan uca iletişim desteği sağlar."
+  },
+  {
+    "soru": "Ağ gecikmesi (Latency) tanımı aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Bir saniyede aktarılan veri miktarı",
+      "Bir paketin bir düğümden diğerine gitmesinin aldığı süre",
+      "Ağdaki toplam kullanıcı sayısı",
+      "Sunucunun depolama kapasitesi"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Gecikme (latency), veri paketinin bir noktadan diğerine ulaşma süresidir."
+  },
+  {
+    "soru": "Bant genişliği (Bandwidth) hangi tip bulut uygulamaları için en kritik öneme sahiptir?",
+    "secenekler": [
+      "Hızlı yanıt süresi bekleyen uygulamalar",
+      "Önemli miktarda veri aktarılması gereken uygulamalar",
+      "Sadece mobil istemciler",
+      "Düşük işlemci gücü gerektiren uygulamalar"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Bant genişliği, buluta ve buluttan büyük miktarda veri aktarımı yapan uygulamalar için kritiktir."
+  },
+  {
+    "soru": "Hızlı yanıt sürelerinin (response time) iş gereksinimi olduğu uygulamalarda en kritik faktör nedir?",
+    "secenekler": [
+      "Bant genişliği",
+      "Gecikme (Latency)",
+      "Depolama alanı",
+      "İşlemci hızı"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Gecikme, hızlı yanıt süresi beklenen interaktif uygulamalar için en kritik performas göstergesidir."
+  },
+  {
+    "soru": "İnternet bağlantısının ve hizmet kalitesindeki gelişmelerun bulut platformlarına etkisi nedir?",
+    "secenekler": [
+      "Bulut potansiyeli internet kalitesiyle paralel artar",
+      "İnternet hızı bulutu etkilemez",
+      "Bulut sadece yerel ağlarda (LAN) çalışır",
+      "Bulut potansiyeli internet kalitesi arttıkça azalır"
+    ],
+    "dogru_cevap_indeksi": 0,
+    "aciklama": "Metne göre bulut platformlarının potansiyeli genellikle internet bağlantısı ve hizmet kalitesindeki gelişmelere paraleldir."
+  },
+  {
+    "soru": "Modern veri merkezleri hangi temel kaynakları barındıran merkezi BT altyapılarıdır?",
+    "secenekler": [
+      "Sadece kullanıcı dosyaları",
+      "Sunucular, veritabanları, ağ cihazları ve yazılım sistemleri",
+      "Sadece elektrik güç kaynakları",
+      "Yalnızca fiziksel arşivler"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Veri merkezleri sunucu, ağ, depolama ve yazılım gibi tüm merkezi BT kaynaklarını barındırır."
+  },
+  {
+    "soru": "Otonom bilişimde 'Kendi Kendine Optimizasyon' (Self-optimization) ne anlama gelir?",
+    "secenekler": [
+      "Kullanıcının sistem ayarlarını manuel yapması",
+      "Çalışma zamanında parametreleri değiştirerek performansı iyileştirmek",
+      "Sistemin kendini virüslere karşı koruması",
+      "Donanım arızalarını kullanıcıya bildirmesi"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Self-optimization, sistemin çalışma zamanında parametreleri dinamik değiştirerek performansı artırma çabasıdır."
+  },
+  {
+    "soru": "Otonom bilişimin 'Kendi Kendini İyileştirme' (Self-Healing) özelliği hangi durumlarda devreye girer?",
+    "secenekler": [
+      "Sistem kapasitesi dolduğunda",
+      "Donanım veya yazılım arızalarından kurtulmak için",
+      "Yeni bir kullanıcı kayıt olduğunda",
+      "Sadece internet kesildiğinde"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Self-healing, donanım veya yazılım arızalarını otomatik algılayıp sistemi kurtarmayı sağlar."
+  },
+  {
+    "soru": "Otonom bilişimde 'Self-Protection' (Kendi Kendini Koruma) temel olarak neyi hedefler?",
+    "secenekler": [
+      "Daha az enerji tüketmeyi",
+      "Kötü niyetli saldırılara ve kademeli arızalara karşı savunma yapmayı",
+      "Yedeklemeyi durdurmayı",
+      "Sistemi otomatik olarak kapatmayı"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Self-protection, platformun kendini saldırılara ve sistem arızalarına karşı koruyabilmesidir."
+  },
+  {
+    "soru": "Veri merkezlerinde 'Yüksek Kullanılabilirlik' (High Availability) sağlamak için hangisi kullanılmaz?",
+    "secenekler": [
+      "Kesintisiz güç kaynakları (UPS)",
+      "Kümelenmiş (clustered) donanım",
+      "Yük dengeleme (load balancing)",
+      "Tek bir merkezi depolama birimi"
+    ],
+    "dogru_cevap_indeksi": 3,
+    "aciklama": "Yüksek kullanılabilirlik için yedeklilik şarttır; tek bir depolama birimi (single point of failure) bu ilkeye aykırıdır."
+  },
+  {
+    "soru": "Uygulamalar için çalışma zamanı kaynaklarını otomatik sağlayan ve temel kurulum gerektirmeyen teknolojiye ne ad verilir?",
+    "secenekler": [
+      "Sunucusuz (Serverless) Ortam",
+      "Fiziksel Sunucu",
+      "Sanal Disk",
+      "Ağ Anahtarı (Switch)"
+    ],
+    "dogru_cevap_indeksi": 0,
+    "aciklama": "Sunucusuz ortamlar, altyapı yönetimi gerektirmeden uygulamaların çalışmasını sağlar."
+  },
+  {
+    "soru": "Sanallaştırmada 'Açık Sanallaştırma Formatı' (OVF) ne için geliştirilmiştir?",
+    "secenekler": [
+      "Sadece Windows sanallaştırmak için",
+      "Sanal disk görüntü formatlarını standartlaştırmak için",
+      "İnternet hızını artırmak için",
+      "Veritabanı şifrelemek için"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "OVF, farklı sanallaştırma çözümleri arasındaki taşınabilirlik sorunlarını gidermek için disk formatlarını standartlaştırır."
+  },
+  {
+    "soru": "Bulut sağlayıcıları için veri merkezlerinde 'Sanallaştırma' katmanı neyi ifade eder?",
+    "secenekler": [
+      "Sadece fiziksel bina altyapısını",
+      "Donanım ve yazılım kaynaklarının mantıksal kopyalara dönüştürülmesini",
+      "Yalnızca kablolama sistemini",
+      "Kullanıcıların fiziksel erişimini"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Sanallaştırma, fiziksel donanımın emüle edilerek yazılım tabanlı kopyalara dönüştürülmesidir."
+  },
+  {
+    "soru": "Kötü formüle edilmiş bir sanallaştırma planının en büyük riski nedir?",
+    "secenekler": [
+      "Aşırı performans yükü (Performance overhead)",
+      "Depolama alanının azalması",
+      "Fiziksel sunucunun çalınması",
+      "Kullanıcı sayısının azalması"
+    ],
+    "dogru_cevap_indeksi": 0,
+    "aciklama": "Hatalı planlama, sanallaştırma katmanının sistem kaynaklarını aşırı tüketmesine (overhead) yol açabilir."
+  },
+  {
+    "soru": "Veri merkezi teknolojisinde 'Tesisler' (Facilities) katmanı neleri kapsar?",
+    "secenekler": [
+      "Sadece sanal makineleri",
+      "İklimlendirme, güç kaynağı, kablolama ve fiziksel güvenlik",
+      "Yalnızca API dökümanlarını",
+      "Kullanıcı arayüz tasarımlarını"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Tesisler katmanı, IT ekipmanlarının çalışması için gerekli fiziksel ortamı (güç, soğutma vb.) ifade eder."
+  },
+  {
+    "soru": "Sanallaştırma tanımı aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "İşletim sistemini silme işlemidir",
+      "Donanımı standartlaştırılmış yazılım kopyalarına çeviren bir dönüştürme işlemidir",
+      "Yalnızca RAM miktarını artırmaktır",
+      "Fiziksel kabloları kısaltma işlemidir"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Sanallaştırma, fiziksel donanımın yazılım tabanlı emülasyonudur."
+  },
+  {
+    "soru": "Birden çok sanal sunucunun tek bir fiziksel sunucuyu paylaşması işlemine ne denir?",
+    "secenekler": [
+      "Sunucu Konsolidasyonu",
+      "Sunucu Çoğaltma",
+      "Fiziksel Ayrıştırma",
+      "Donanım Klonlama"
+    ],
+    "dogru_cevap_indeksi": 0,
+    "aciklama": "Sunucu konsolidasyonu, kaynak kullanımını artırmak için birden fazla VM'in aynı donanımı paylaşmasıdır."
+  },
+  {
+    "soru": "İşletim sistemi tabanlı sanallaştırmada sanallaştırma yazılımı nereye yüklenir?",
+    "secenekler": [
+      "Doğrudan donanıma",
+      "Mevcut (host) bir işletim sisteminin üzerine",
+      "BIOS ekranına",
+      "Harici bir USB belleğe"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "OS tabanlı sanallaştırmada (Tip 2), hipervizör mevcut bir işletim sistemi (Windows, Linux vb.) üzerinde bir uygulama gibi çalışır."
+  },
+  {
+    "soru": "Doğrudan donanım üzerine kurulan ve ana işletim sistemine ihtiyaç duymayan sanallaştırma türü nedir?",
+    "secenekler": [
+      "Tip 2 Sanallaştırma",
+      "İşletim Sistemi Tabanlı Sanallaştırma",
+      "Donanım Tabanlı (Bare-metal / Tip 1) Sanallaştırma",
+      "Konteynerleştirme"
+    ],
+    "dogru_cevap_indeksi": 2,
+    "aciklama": "Tip 1 (Bare-metal) hipervizörler doğrudan donanım üzerinde çalışır."
+  },
+  {
+    "soru": "Aşağıdakilerden hangisi bir 'Type 1 Hypervisor' (Bare-metal) örneğidir?",
+    "secenekler": [
+      "Oracle VirtualBox",
+      "VMware Workstation",
+      "VMware ESXi",
+      "Microsoft Paint"
+    ],
+    "dogru_cevap_indeksi": 2,
+    "aciklama": "VMware ESXi, kurumsal seviyede doğrudan donanıma kurulan bir Tip 1 hipervizördür."
+  },
+  {
+    "soru": "Aşağıdakilerden hangisi 'Type 2 Hypervisor' örneğidir?",
+    "secenekler": [
+      "Microsoft Hyper-V (Server)",
+      "Oracle VirtualBox",
+      "Xen",
+      "KVM"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "VirtualBox, mevcut bir OS üzerine kurulan Tip 2 hipervizördür."
+  },
+  {
+    "soru": "Sanal sunucular hangi formatta oluşturulur ve basit kopyala-yapıştır ile çoğaltılabilir?",
+    "secenekler": [
+      "Fiziksel devre kartı olarak",
+      "Sanal disk görüntüsü (image) dosyası olarak",
+      "Kağıt döküman olarak",
+      "Sadece ağ adresi olarak"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Sanal sunucular disk görüntü dosyalarından oluşur, bu da taşınabilirlik ve yedekleme kolaylığı sağlar."
+  },
+  {
+    "soru": "Sanallaştırmanın sağladığı 'Donanım Bağımsızlığı' neyi ifade eder?",
+    "secenekler": [
+      "Sunucunun elektrik olmadan çalışmasını",
+      "Sanal sunucuların farklı donanımlara sahip ana bilgisayarlara kolayca taşınabilmesini",
+      "Donanım satın almanın yasaklanmasını",
+      "İşletim sisteminin donanımdan silinmesini"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Donanım bağımsızlığı, VM'in alt katmandaki donanıma bağımlı olmadan farklı sunucularda çalışabilmesidir."
+  },
+  {
+    "soru": "Sanallaştırma altyapı yönetimi (VIM) araçlarının temel görevi nedir?",
+    "secenekler": [
+      "Yalnızca elektrik faturalarını ödemek",
+      "Sanallaştırılmış BT kaynaklarını toplu ve otomatik olarak yönetmek",
+      "Kullanıcılara e-posta göndermek",
+      "Fiziksel sunucuları tozdan korumak"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "VIM (Virtual Infrastructure Manager), sanal kaynakların merkezi yönetimini ve otomasyonunu sağlar."
+  },
+  {
+    "soru": "Hipervizör (Hypervisor) nedir?",
+    "secenekler": [
+      "Bir ekran kartı modelidir",
+      "Fiziksel kaynakları sanal makineler arasında paylaştıran yazılımdır",
+      "Yalnızca bir veritabanı türüdür",
+      "Bir ağ kablosu çeşididir"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Hipervizör, sanallaştırmanın motorudur ve donanımı VM'lere paylaştırır."
+  },
+  {
+    "soru": "Konuk İşletim Sistemi (Guest OS) neyi ifade eder?",
+    "secenekler": [
+      "Host makinesindeki ana işletim sistemini",
+      "Sanal makine içine kurulu olan işletim sistemini",
+      "Sadece teknik destek ekibini",
+      "Yalnızca bir bulut kullanıcısını"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Guest OS, sanal makine (VM) içinde çalışan bağımsız işletim sistemidir."
+  },
+  {
+    "soru": "Aşağıdakilerden hangisi sanallaştırmanın bir dezavantajı olabilir?",
+    "secenekler": [
+      "Donanım verimliliğini artırması",
+      "Hatalı yapılandırmada performans kaybına (overhead) yol açması",
+      "Yedekleme kolaylığı sağlaması",
+      "Fiziksel sunucu sayısını azaltması"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Sanallaştırma ek bir katman getirdiği için performans kaybı riski taşır."
+  },
+  {
+    "soru": "Sanal makine yönetiminde GUI, hipervizör ve ayarların bütününe ne ad verilir?",
+    "secenekler": [
+      "Virtual Machine Management",
+      "Cloud Storage",
+      "Network Interface",
+      "Database Admin"
+    ],
+    "dogru_cevap_indeksi": 0,
+    "aciklama": "Yönetim araçları, arayüz ve motorun tamamı sanal makine yönetimi olarak adlandırılır."
+  },
+  {
+    "soru": "Donanım tabanlı (Tip 1) sanallaştırmada hipervizör neyle doğrudan iletişim kurar?",
+    "secenekler": [
+      "Windows işletim sistemiyle",
+      "Fiziksel ana bilgisayar donanımıyla",
+      "Bir web tarayıcısıyla",
+      "Yalnızca klavye ve fareyle"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Tip 1 hipervizörler doğrudan donanım sürücüleri üzerinden fiziksel cihazlarla konuşur."
+  },
+  {
+    "soru": "Sanallaştırma teknolojisinde 'Ölçeklenebilirlik' ne sağlar?",
+    "secenekler": [
+      "Sistemin fiziksel boyutunu büyütmeyi",
+      "Talebe göre BT kaynaklarını (CPU, RAM vb.) artırma veya azaltma yeteneğini",
+      "Yalnızca yeni donanım satın almayı",
+      "Kullanıcı şifrelerini değiştirmeyi"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Ölçeklenebilirlik, yük arttığında kapasiteyi artırma veya yük azaldığında azaltma esnekliğidir."
+  },
+  {
+    "soru": "Çok kiracılı (Multitenant) uygulama tasarımının temel amacı nedir?",
+    "secenekler": [
+      "Her kullanıcıya farklı bir fiziksel sunucu vermek",
+      "Birden çok kullanıcının aynı uygulama mantığına aynı anda erişmesini sağlamak",
+      "Sadece tek bir kullanıcıya hizmet vermek",
+      "Uygulamanın kaynak kodunu her kullanıcıya satmak"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Çok kiracılık, aynı uygulama örneğinin (instance) yalıtılmış şekilde birçok kiracı tarafından paylaşılmasıdır."
+  },
+  {
+    "soru": "Çok kiracılı uygulamalarda bir kiracı neleri özelleştirebilir?",
+    "secenekler": [
+      "Sadece fiziksel RAM miktarını",
+      "Kullanıcı arayüzü, iş süreçleri ve veri modeli",
+      "Bulut sağlayıcısının tüm donanımını",
+      "Diğer kiracıların verilerini"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Kiracılar uygulamanın görünümünü (UI), kurallarını ve kendi veri alanlarını özelleştirebilir."
+  },
+  {
+    "soru": "Çok kiracılıkta 'Kullanım Yalıtımı' (Usage Isolation) ne demektir?",
+    "secenekler": [
+      "Bir kiracının kullanımının diğerlerinin performansını etkilememesi",
+      "Kiracıların birbirini tanıması",
+      "Uygulamanın internete kapalı olması",
+      "Veritabanının tamamen silinmesi"
+    ],
+    "dogru_cevap_indeksi": 0,
+    "aciklama": "Yalıtım, bir kiracının yoğun kullanımının veya hatasının diğer kiracıları bozmamasıdır."
+  },
+  {
+    "soru": "Aşağıdakilerden hangisi çok kiracılı uygulamaların bir özelliği değildir?",
+    "secenekler": [
+      "Veri güvenliği ve yalıtımı",
+      "Ölçeklenebilirlik",
+      "Tarifeli kullanım (Pay-per-use)",
+      "Her kiracı için ayrı bir fiziksel veritabanı sunucusu zorunluluğu"
+    ],
+    "dogru_cevap_indeksi": 3,
+    "aciklama": "Çok kiracılıkta veritabanı veya şema paylaşılabilir; her kiracıya ayrı fiziksel sunucu zorunlu değildir."
+  },
+  {
+    "soru": "Sanallaştırma ile Çok Kiracılık arasındaki temel fark nedir?",
+    "secenekler": [
+      "Sanallaştırma donanımı, Çok Kiracılık uygulamayı paylaştırır",
+      "Aralarında hiçbir fark yoktur",
+      "Çok Kiracılık donanımı, Sanallaştırma uygulamayı paylaştırır",
+      "Sanallaştırma sadece fiziksel sunucularda olur"
+    ],
+    "dogru_cevap_indeksi": 0,
+    "aciklama": "Sanallaştırma sunucu kopyaları oluştururken, çok kiracılık tek bir uygulama mantığını paylaştırır."
+  },
+  {
+    "soru": "Web tabanlı hizmetler (Web Services) iletişim kurmak için genellikle neyi kullanıma sunarlar?",
+    "secenekler": [
+      "Grafiksel kullanıcı arayüzü (GUI)",
+      "API'leri (Uygulama Programlama Arayüzü)",
+      "Sadece yazılı dökümanları",
+      "Fiziksel anahtarları"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Web servisleri makineler arası etkileşim için tasarlanmıştır ve API sunarlar."
+  },
+  {
+    "soru": "REST (Representational State Transfer) mimarisinde hangisi bir kısıtlama (constraint) değildir?",
+    "secenekler": [
+      "İstemci-Sunucu yapısı",
+      "Durumsuzluk (Statelessness)",
+      "Önbellekleme (Cache)",
+      "Verilerin sadece XML formatında olması zorunluluğu"
+    ],
+    "dogru_cevap_indeksi": 3,
+    "aciklama": "REST format bağımsızdır; JSON, XML veya düz metin kullanabilir."
+  },
+  {
+    "soru": "SOAP tabanlı web servislerinde mesajlar hangi formatta ifade edilmelidir?",
+    "secenekler": [
+      "JSON",
+      "XML",
+      "HTML",
+      "TXT"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "SOAP protokolü mesajlaşma için XML formatını kullanır."
+  },
+  {
+    "soru": "Bir web servisinin API'sini tanımlayan ve fonksiyonlarını listeleyen dökümana ne denir?",
+    "secenekler": [
+      "WSDL (Web Service Description Language)",
+      "RESTful API",
+      "HTTP Header",
+      "SQL Query"
+    ],
+    "dogru_cevap_indeksi": 0,
+    "aciklama": "WSDL, servis işlemlerini ve mesaj yapılarını tanımlayan XML tabanlı dildir."
+  },
+  {
+    "soru": "Web servislerinin keşfi (discovery) için kullanılan 'dizin' hizmetine ne ad verilir?",
+    "secenekler": [
+      "UDDI",
+      "SOAP",
+      "WSDL",
+      "JSON"
+    ],
+    "dogru_cevap_indeksi": 0,
+    "aciklama": "UDDI, web servislerinin yayınlandığı ve keşfedildiği bir katalog/dizin servisidir."
+  },
+  {
+    "soru": "REST servislerinde 'Statelessness' (Durumsuzluk) neyi ifade eder?",
+    "secenekler": [
+      "Her isteğin bağımsız şekilde işlenmesini",
+      "Sunucunun tüm kullanıcı verilerini hafızada tutmasını",
+      "İnternetin hiç kesilmemesini",
+      "Şifrelerin kaydedilmesini"
+    ],
+    "dogru_cevap_indeksi": 0,
+    "aciklama": "Statelessness, sunucunun istekler arasında istemci oturum bilgisini saklamamasını, her isteğin tüm bilgiyi içermesini sağlar."
+  },
+  {
+    "soru": "SOAP mesajları hangi iki temel bölümden oluşur?",
+    "secenekler": [
+      "Giriş ve Çıkış",
+      "Başlık (Header) ve Gövde (Body)",
+      "URL ve Parametre",
+      "Kullanıcı Adı ve Şifre"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "SOAP mesaj yapısında meta veriler Header'da, ana içerik Body'de bulunur."
+  },
+  {
+    "soru": "Aşağıdakilerden hangisi modern bir web tabanlı RPC çerçevesidir?",
+    "secenekler": [
+      "gRPC",
+      "FTP",
+      "Telnet",
+      "POP3"
+    ],
+    "dogru_cevap_indeksi": 0,
+    "aciklama": "gRPC, Google tarafından geliştirilen yüksek performanslı bir RPC çerçevesidir."
+  },
+  {
+    "soru": "Kurumsal Servis Veri Yolu (ESB - Enterprise Service Bus) ne işe yarar?",
+    "secenekler": [
+      "Sadece dosya saklamaya",
+      "Servis aracılığı, yönlendirme ve mesaj kuyruğa alma işlemlerine",
+      "İnternet hızını artırmaya",
+      "Yalnızca e-posta göndermeye"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "ESB, farklı servislerin entegrasyonunu ve aralarındaki mesaj trafiğini yöneten ara katmandır."
+  },
+  {
+    "soru": "Hizmet aracıları (Service Agents) hakkında hangisi doğrudur?",
+    "secenekler": [
+      "Yalnızca fiziksel cihazlardır",
+      "İletileri çalışma zamanında kesmek için tasarlanmış olay odaklı programlardır",
+      "Sadece kullanıcı arayüzü sunarlar",
+      "Veritabanı tablolarıdır"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Servis ajanları, servis trafiğini izleyen veya değiştiren küçük yazılım birimleridir."
+  },
+  {
+    "soru": "Pasif hizmet temsilcileri (Passive Service Agents) ne yaparlar?",
+    "secenekler": [
+      "Mesaj içeriğini değiştirirler",
+      "Mesajı sadece okuyup izleme/günlüğe kaydetme yaparlar",
+      "İsteği tamamen reddederler",
+      "Yeni bir mesaj oluştururlar"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Pasif ajanlar trafiğe müdahale etmez, sadece analiz ve kayıt amaçlı veri yakalar."
+  },
+  {
+    "soru": "Orkestrasyon Platformu'nun temel görevi nedir?",
+    "secenekler": [
+      "Donanım sürücülerini güncellemek",
+      "Servislerin iş akışı mantığını (workflow logic) barındırmak ve yürütmek",
+      "Sadece şifreleri saklamak",
+      "Bilgisayarı yeniden başlatmak"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Orkestrasyon, birden fazla servisin belirli bir iş sürecine göre nasıl birlikte çalışacağını yönetir."
+  },
+  {
+    "soru": "API ve Web Servisi karşılaştırmasında hangisi doğrudur?",
+    "secenekler": [
+      "Her Web Servisi bir API'dir, ancak her API bir Web Servisi değildir",
+      "Web servisleri API'den daha hızlıdır",
+      "API sadece XML kullanır",
+      "Web servisi sadece yerel ağda çalışır"
+    ],
+    "dogru_cevap_indeksi": 0,
+    "aciklama": "API daha geniş bir kavramdır; Web servisleri ağ üzerinden API sunmanın bir yoludur."
+  },
+  {
+    "soru": "Facebook tarafından geliştirilen ve veri sorgulama için kullanılan modern protokol hangisidir?",
+    "secenekler": [
+      "GraphQL",
+      "gRPC",
+      "Falcor",
+      "SOAP"
+    ],
+    "dogru_cevap_indeksi": 0,
+    "aciklama": "GraphQL, Facebook tarafından istemcilerin sadece ihtiyaç duyduğu veriyi istemesi için geliştirilmiştir."
+  },
+  {
+    "soru": "Bulut sağlayıcıları kaynaklarına erişimi genellikle hangi servisler aracılığıyla sunar?",
+    "secenekler": [
+      "Sadece fiziksel konsollar",
+      "RESTful servisler",
+      "Disketler",
+      "Faks mesajları"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Günümüzde bulut sağlayıcıları (AWS, Azure vb.) API erişimini çoğunlukla REST mimarisiyle sunar."
+  },
+  {
+    "soru": "Konteyner (Container) kavramı ilk olarak hangi sistemlerde ve ne amaçla ortaya çıkmıştır?",
+    "secenekler": [
+      "Windows - Oyun oynamak için",
+      "Unix - Uygulama kodlarını birbirinden ayırmak için",
+      "Android - Pil ömrünü uzatmak için",
+      "MacOS - Video düzenlemek için"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Konteynerler 1970'lerde Unix sistemlerinde süreç izolasyonu sağlamak amacıyla ortaya çıkmıştır."
+  },
+  {
+    "soru": "Konteynerler ve Sanal Sunucular (VM) arasındaki temel fark nedir?",
+    "secenekler": [
+      "VM daha az yer kaplar",
+      "Konteyner tüm işletim sistemini kopyalar, VM sadece kaynakları",
+      "VM tüm işletim sistemini sanallaştırır, Konteyner işletim sistemi kaynaklarının bir alt kümesini sağlar",
+      "Hiçbir fark yoktur"
+    ],
+    "dogru_cevap_indeksi": 2,
+    "aciklama": "VM'ler kendi çekirdeklerine sahip tam bir OS taşırken, konteynerler host OS çekirdeğini paylaşır ve sadece gerekli kütüphaneleri içerir."
+  },
+  {
+    "soru": "Aşağıdakilerden hangisi bir konteyner motoru (container engine) örneğidir?",
+    "secenekler": [
+      "Docker",
+      "Windows Media Player",
+      "Excel",
+      "Photoshop"
+    ],
+    "dogru_cevap_indeksi": 0,
+    "aciklama": "Docker, en yaygın kullanılan konteyner oluşturma ve yönetme aracıdır."
+  },
+  {
+    "soru": "Konteyner İmajı (Container Image) nedir?",
+    "secenekler": [
+      "Konteynerin ekran görüntüsüdür",
+      "Konteyner oluşturmak için kullanılan önceden tanımlanmış bir şablondur",
+      "Sadece bir duvar kağıdıdır",
+      "Fiziksel bir depolama aygıtıdır"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "İmaj, bir konteynerin çalışması için gereken kod, kütüphane ve ayarları içeren salt okunur bir dosyadır."
+  },
+  {
+    "soru": "Konteyner motorunun 'Yönetim Katmanı' (Management Plane) neyi içerir?",
+    "secenekler": [
+      "Sadece veritabanlarını",
+      "Yöneticilerin yapılandırma ve bakım yapmasını sağlayan GUI ve CLI araçlarını",
+      "Yalnızca ağ kablolarını",
+      "Elektrik düğmelerini"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Yönetim katmanı, kullanıcıların konteynerlerle etkileşim kurduğu arayüzleri (Komut satırı, Grafik arayüz) kapsar."
+  },
+  {
+    "soru": "Konteynerlerin sağladığı 'İzolasyon' (Isolation) avantajı ne demektir?",
+    "secenekler": [
+      "Uygulamanın internetten kopması",
+      "Uygulamanın bağımlılıklarının diğer uygulamalardan tamamen ayrılması",
+      "Bilgisayarın yalnız kalması",
+      "Sadece tek bir kod satırının çalışması"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "İzolasyon, bir konteynerdeki sorunun veya ayarların diğer konteynerleri etkilememesini sağlar."
+  },
+  {
+    "soru": "Docker'ın piyasaya sürülüş yılı ve etkisi aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "1990 - İnterneti başlattı",
+      "2013 - Yazılım geliştirme ve dağıtım süreçlerinde devrim yarattı",
+      "2005 - Sosyal medyayı başlattı",
+      "2020 - Yapay zekayı buldu"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Docker 2013'te çıktı ve konteynerleştirme teknolojisini ana akım haline getirdi."
+  },
+  {
+    "soru": "İç içe geçmiş sanallaştırma (Nested Virtualization) nedir?",
+    "secenekler": [
+      "İki bilgisayarı birbirine bağlamak",
+      "Bir konteynerin sanal bir sunucu (VM) üzerine dağıtılması",
+      "Birden fazla klavye kullanmak",
+      "İnterneti ikiye bölmek"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Nested virtualization, bir sanallaştırma katmanı içinde başka bir sanallaştırma (VM içinde Konteyner gibi) çalıştırmaktır."
+  },
+  {
+    "soru": "Konteynerlerin sanal sunuculara göre 'daha hızlı başlamasının' temel sebebi nedir?",
+    "secenekler": [
+      "Daha pahalı olmaları",
+      "Tam bir işletim sistemi önyüklemesi (boot) gerektirmemeleri",
+      "Daha küçük ekranlı olmaları",
+      "İnternete ihtiyaç duymamaları"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Konteynerler host OS çekirdeğini kullandığı için saniyeler içinde başlar, VM'ler ise tüm işletim sistemini başlatmak zorundadır."
+  },
+  {
+    "soru": "Aşağıdakilerden hangisi konteynerleştirmenin bir dezavantajı veya riskidir?",
+    "secenekler": [
+      "Taşınabilirlik",
+      "Host işletim sistemi çekirdeğinin paylaşılması nedeniyle güvenlik riskleri",
+      "Hızlı dağıtım",
+      "Düşük kaynak tüketimi"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Konteynerler çekirdeği paylaştığı için bir konteynerden sızan saldırganın host sisteme ulaşma riski vardır."
+  },
+  {
+    "soru": "Konteyner teknolojisinde 'Host' (Barındırıcı) neyi temsil eder?",
+    "secenekler": [
+      "Sadece bir web sitesini",
+      "Konteynerin çalıştırıldığı fiziksel veya sanal işletim sistemi ortamını",
+      "Yalnızca bir veritabanıını",
+      "Bir kullanıcı adını"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Host, konteyner motorunun kurulu olduğu ve konteynerlerin üzerinde koştuğu makinedir."
+  },
+  {
+    "soru": "Konteynerlerin 'Değiştirilemezliği' (Immutability) ne anlama gelir?",
+    "secenekler": [
+      "İçindeki kodun hiç çalışmaması",
+      "Bir kez oluşturulan imajın üzerinde değişiklik yapılamaması, değişiklik için yeni imaj oluşturulması",
+      "Hiçbir zaman silinememesi",
+      "Sadece tek bir sunucuda çalışabilmesi"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Konteyner imajları read-only'dir. Güncelleme için yeni bir build dosyasıyla yeni bir sürüm oluşturulur."
+  },
+  {
+    "soru": "Bir konteynerin ihtiyaç duyduğu verinin bulunduğu fiziksel konuma yakın çalışması gerekliliğine ne denir?",
+    "secenekler": [
+      "Veri yakınlığı (Data locality)",
+      "Ağ hızı",
+      "RAM kapasitesi",
+      "Bulut yedekleme"
+    ],
+    "dogru_cevap_indeksi": 0,
+    "aciklama": "Data locality, performans için işlem gücünün veriye yakın konumlandırılmasıdır."
+  },
+  {
+    "soru": "Aşağıdakilerden hangisi bir konteyner paket yöneticisidir?",
+    "secenekler": [
+      "Helm",
+      "Windows Explorer",
+      "Google Chrome",
+      "Spotify"
+    ],
+    "dogru_cevap_indeksi": 0,
+    "aciklama": "Helm, Kubernetes için paket yönetimi sağlayan yaygın bir araçtır."
+  },
+  {
+    "soru": "Konteynerlerin 'Sürüm Desteği' (Version Support) sayesinde hangisi yapılabilir?",
+    "secenekler": [
+      "Eski sürümlere geri dönülebilir (Rollback)",
+      "İnternet hızı artırılabilir",
+      "Donanım bozulması engellenebilir",
+      "Kullanıcı sayısı sınırlanabilir"
+    ],
+    "dogru_cevap_indeksi": 0,
+    "aciklama": "Sürümleme sayesinde hatalı bir güncelleme sonrası eski stabil sürüme anında dönülebilir."
+  },
+  {
+    "soru": "Kapsayıcı (Konteyner) Orkestrasyonu nedir?",
+    "secenekler": [
+      "Konteynerlerin içinde müzik çalmaktır",
+      "Dağıtık ortamda konteynerlerin dağıtım, ölçekleme ve yönetimini otomatikleştirmektir",
+      "Sadece bir tane konteyner çalıştırmaktır",
+      "Yazılımcıların beraber kod yazmasıdır"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Orkestrasyon, çok sayıda konteynerin karmaşık ortamlarda otomatik yönetilmesidir."
+  },
+  {
+    "soru": "Aşağıdakilerden hangisi en popüler açık kaynak kapsayıcı orkestrasyon platformudur?",
+    "secenekler": [
+      "Kubernetes",
+      "Windows Server",
+      "Microsoft Word",
+      "VLC Player"
+    ],
+    "dogru_cevap_indeksi": 0,
+    "aciklama": "Kubernetes (K8s), konteyner orkestrasyonunda endüstri standardı haline gelmiştir."
+  },
+  {
+    "soru": "Kubernetes ekosisteminde 'Pod' nedir?",
+    "secenekler": [
+      "Bir müzik çalar",
+      "En küçük dağıtılabilir birim olup bir veya birden fazla konteyneri barındırır",
+      "Sadece tek bir fiziksel sunucudur",
+      "Bir ağ kablosu türüdür"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Pod, Kubernetes'teki temel çalışma birimidir ve içindeki konteynerler aynı kaynakları paylaşır."
+  },
+  {
+    "soru": "Orkestratör bileşenlerinden olan 'Scheduler' (Zamanlayıcı) ne iş yapar?",
+    "secenekler": [
+      "E-postaları zamanlar",
+      "Yeni konteynerlerin hangi düğüme (node) yerleştirileceğine karar verir",
+      "Sistemin saatini ayarlar",
+      "Kullanıcıların çalışma saatlerini izler"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Scheduler, boş kaynakları olan uygun sunucuları bulup konteynerleri oralara atar."
+  },
+  {
+    "soru": "Orkestratörün 'Sağlık İzleme' (Health Monitoring) özelliği ne sağlar?",
+    "secenekler": [
+      "Doktor randevusu almayı",
+      "Çöken veya başarısız olan konteynerleri otomatik yeniden başlatmayı",
+      "Sadece CPU sıcaklığını ölçmeyi",
+      "Kullanıcıların şifrelerini kontrol etmeyi"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Self-healing özelliği sayesinde orkestratör bozulan servisleri otomatik düzeltir."
+  },
+  {
+    "soru": "Aynı fiziksel sunucu üzerindeki konteynerler arası iletişimi sağlayan ağ türü nedir?",
+    "secenekler": [
+      "Ana (Host) Ağı",
+      "Kaplama (Overlay) Ağı",
+      "Uydu Ağı",
+      "Radyo Dalgaları"
+    ],
+    "dogru_cevap_indeksi": 0,
+    "aciklama": "Yerel host ağı, aynı makine içindeki konteyner trafiğini yönetir."
+  },
+  {
+    "soru": "Farklı fiziksel sunuculardaki konteynerlerin birbirleriyle iletişim kurmasını sağlayan sanal ağa ne denir?",
+    "secenekler": [
+      "Ethernet Kablosu",
+      "Kaplama (Overlay) Ağı",
+      "LAN Kablosu",
+      "Modem"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Overlay ağlar, fiziksel ağın üzerinde sanal bir katman oluşturarak farklı sunuculardaki konteynerleri aynı ağdaymış gibi gösterir."
+  },
+  {
+    "soru": "Bir pod içindeki konteynerlerin ortak kullandığı dosya sistemine veya depolama alanına ne denir?",
+    "secenekler": [
+      "Volume (Birim)",
+      "RAM",
+      "CPU",
+      "Mouse"
+    ],
+    "dogru_cevap_indeksi": 0,
+    "aciklama": "Volume'lar, pod içindeki konteynerlerin veri paylaşmasını ve verinin kalıcı olmasını sağlar."
+  },
+  {
+    "soru": "Sidecar Kapsayıcı (Sidecar Container) kalıbının amacı nedir?",
+    "secenekler": [
+      "Ana uygulamayı tamamen silmek",
+      "Ana uygulama yanına yardımcı görevleri (log toplama vb.) üstlenen ek bir konteyner eklemek",
+      "Oyun oynamak",
+      "İnterneti hızlandırmak"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Sidecar, ana iş mantığına dokunmadan yardımcı fonksiyonları (logging, monitoring vb.) yandaki bir konteynere aktarır."
+  },
+  {
+    "soru": "Adaptör Kapsayıcı (Adapter Container) ne için kullanılır?",
+    "secenekler": [
+      "Elektrik prizine takmak için",
+      "Uygulamanın çıktısını harici sistemlerin beklediği formata dönüştürmek için",
+      "Resim dosyalarını açmak için",
+      "Yalnızca video izlemek için"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Adaptör kalıbı, heterojen sistemler arasında veri standardizasyonu sağlar."
+  },
+  {
+    "soru": "Elçi (Ambassador) Kapsayıcı temel olarak hangi görevi üstlenir?",
+    "secenekler": [
+      "Sadece misafir karşılamak",
+      "Uygulamanın dış dünya veya veritabanları ile olan iletişim karmaşıklığını gizlemek/yönetmek",
+      "Kullanıcı şifrelerini çalmak",
+      "Sistemi kapatmak"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Ambassador, uygulama için dış bağlantıları (proxy gibi) yöneten bir aracıdır."
+  },
+  {
+    "soru": "Konteyner imajlarının 'Katmanlı' (Layered) yapısı ne avantaj sağlar?",
+    "secenekler": [
+      "Daha renkli görünmesini",
+      "Değişmeyen katmanların yeniden kullanılabilmesini ve depolama tasarrufunu",
+      "Bilgisayarın ısınmasını engellemeyi",
+      "Sadece tek bir kişi tarafından kullanılmasını"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Katmanlı yapı sayesinde aynı temel imajı kullanan 100 farklı imaj, temel katmanı sadece bir kez diskte saklar."
+  },
+  {
+    "soru": "İşletim sistemi çekirdeği (Kernel) hakkında hangisi doğrudur?",
+    "secenekler": [
+      "Konteyner imajı tarafından soyutlanır ve imajın içine dahil edilir",
+      "Konteyner motoru tarafından yönetilir ve imaj tarafından soyutlanmaz",
+      "Sadece oyunlarda kullanılır",
+      "Her konteynerin kendine ait bir çekirdeği vardır"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Konteynerler host OS çekirdeğini kullanır, çekirdek imaj içine konulmaz."
+  },
+  {
+    "soru": "Konteyner Yapı Dosyası (Container Build File / Dockerfile) nedir?",
+    "secenekler": [
+      "Bir resim dosyasıdır",
+      "İmajın nasıl oluşturulacağını tanımlayan talimatlar listesidir",
+      "Kullanıcının özgeçmişidir",
+      "Sadece hata kayıtlarıdır"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Build dosyası, hangi kütüphanelerin kurulacağı gibi imaj üretim adımlarını içerir."
+  },
+  {
+    "soru": "Kapsayıcı paket yöneticileri (Helm vb.) ile Orkestratörler (Kubernetes vb.) arasındaki fark nedir?",
+    "secenekler": [
+      "Fark yoktur",
+      "Paket yöneticisi imaj ve bağımlılık yönetimine, orkestratör ise çalışma zamanı dağıtım ve ölçeklemeye odaklanır",
+      "Orkestratör sadece yerel ağda çalışır",
+      "Paket yöneticisi donanım tasarımı yapar"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Paket yöneticisi 'ne kurulacak' ile, orkestratör 'nasıl çalışacak ve ölçeklenecek' ile ilgilenir."
+  },
+  {
+    "soru": "Bilgi güvenliğinin üç temel unsuru (CIA) nelerdir?",
+    "secenekler": [
+      "Hız, Kapasite, Maliyet",
+      "Gizlilik (Confidentiality), Bütünlük (Integrity), Erişilebilirlik (Availability)",
+      "İnternet, Bilgisayar, Yazılım",
+      "Şifre, Kullanıcı, Admin"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "CIA üçlüsü; bilginin yetkisiz erişilmemesi (gizlilik), değiştirilmemesi (bütünlük) ve istendiğinde ulaşılmasıdır (erişilebilirlik)."
+  },
+  {
+    "soru": "Bulut güvenliğinde 'Gizlilik' (Confidentiality) temel olarak neyle ilgilidir?",
+    "secenekler": [
+      "Verilerin çok hızlı silinmesiyle",
+      "Verilere yalnızca yetkili tarafların erişebilmesiyle",
+      "Verilerin her gün yedeklenmesiyle",
+      "Verilerin boyutunun küçültülmesiyle"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Gizlilik, hassas bilgilerin yetkisiz kişilerin eline geçmesini önlemektir."
+  },
+  {
+    "soru": "Verinin yetkisiz bir tarafça değiştirilmemiş olması durumuna ne ad verilir?",
+    "secenekler": [
+      "Gizlilik",
+      "Bütünlük (Integrity)",
+      "Erişilebilirlik",
+      "Doğruluk"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Bütünlük, verinin kaynaktan hedefe bozulmadan veya manipüle edilmeden ulaşmasıdır."
+  },
+  {
+    "soru": "İnkâr edilemezlik (Non-repudiation) ilkesi neyi sağlar?",
+    "secenekler": [
+      "İşlemi yapan kişinin bu işlemi yaptığını reddedememesini",
+      "İnternet faturasının iptalini",
+      "Kullanıcının şifresini unutmasını",
+      "Sistemin hiç hata vermemesini"
+    ],
+    "dogru_cevap_indeksi": 0,
+    "aciklama": "Dijital imzalar ve loglar sayesinde bir işlemin kim tarafından yapıldığı kesin olarak ispatlanır."
+  },
+  {
+    "soru": "Siber güvenlik bağlamında 'Zafiyet' (Vulnerability) nedir?",
+    "secenekler": [
+      "Bir saldırganın ismidir",
+      "Sistemde bulunan bir kusur, açıklık veya zayıflıktır",
+      "Sistemin çok hızlı çalışmasıdır",
+      "Bir antivirüs programıdır"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Zafiyet, saldırganların sömürebileceği teknik veya mantıksal boşluklardır."
+  },
+  {
+    "soru": "Kuruluşun henüz farkında olmadığı veya yaması bulunmayan zafiyet türüne ne denir?",
+    "secenekler": [
+      "Eski Zafiyet",
+      "Sıfır Gün (Zero-Day) Zafiyeti",
+      "Bilinen Zafiyet",
+      "Kullanıcı Hatası"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Zero-day, henüz savunması geliştirilmemiş, keşfedildiği an sömürülebilen tehlikeli açıklardır."
+  },
+  {
+    "soru": "Bir saldırganın sistemdeki zafiyeti kendi çıkarı için kullanması eylemine ne denir?",
+    "secenekler": [
+      "Sömürme (Exploit)",
+      "Yedekleme",
+      "Güncelleme",
+      "Tarama"
+    ],
+    "dogru_cevap_indeksi": 0,
+    "aciklama": "Exploit, bir zafiyeti kullanarak sisteme sızma veya zarar verme aracı/eylemidir."
+  },
+  {
+    "soru": "Hizmet Dışı Bırakma (DoS) saldırısının temel amacı nedir?",
+    "secenekler": [
+      "Verileri çalmak",
+      "BT kaynaklarını aşırı yükleyerek sistemi çalışamaz/erişilemez hale getirmek",
+      "Kullanıcıya hediye göndermek",
+      "Şifreleri değiştirmek"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "DoS saldırıları, meşru kullanıcıların servise erişimini engellemek için kaynakları tüketir."
+  },
+  {
+    "soru": "Meşru bir uygulama gibi görünen ancak arkada zararlı faaliyetler yürüten yazılım hangisidir?",
+    "secenekler": [
+      "Virüs",
+      "Truva Atı (Trojan)",
+      "Solucan (Worm)",
+      "Reklam Yazılımı"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Trojanlar, kendilerini yararlı bir yazılım gibi göstererek kullanıcıyı kandırıp sisteme sızar."
+  },
+  {
+    "soru": "Verileri şifreleyip erişimi engelleyen ve açmak için ücret talep eden yazılım türü nedir?",
+    "secenekler": [
+      "Casus Yazılım",
+      "Fidye Yazılımı (Ransomware)",
+      "Adware",
+      "Anti-virüs"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Ransomware, verileri rehin alarak para (genelde kripto) sızdırmaya çalışır."
+  },
+  {
+    "soru": "Sosyal Mühendislik saldırılarında saldırgan neyi sömürür?",
+    "secenekler": [
+      "Yazılım hatalarını",
+      "İnsan psikolojisini ve güvenini",
+      "Fiziksel donanımı",
+      "İnternet kablolarını"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Sosyal mühendislik, insanları kandırarak gizli bilgi almayı hedefleyen manipülasyon teknikleridir."
+  },
+  {
+    "soru": "Bir saldırganın çok sayıda parola kombinasyonu deneyerek sisteme sızmaya çalışmasına ne denir?",
+    "secenekler": [
+      "Kaba Kuvvet (Brute Force) Saldırısı",
+      "SQL Enjeksiyonu",
+      "Phishing",
+      "DoS"
+    ],
+    "dogru_cevap_indeksi": 0,
+    "aciklama": "Brute force, deneme-yanılma yoluyla şifre kırma yöntemidir."
+  },
+  {
+    "soru": "Web uygulamalarındaki giriş alanlarına kötü niyetli kod yerleştirerek veritabanını ele geçirme tekniği nedir?",
+    "secenekler": [
+      "Cross-Site Scripting",
+      "SQL Enjeksiyonu (SQL Injection)",
+      "Buffer Overflow",
+      "Botnet"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "SQL Injection, uygulama formları üzerinden veritabanı komutları çalıştırma saldırısıdır."
+  },
+  {
+    "soru": "Aşağıdakilerden hangisi bir 'İç Tehdit' (Insider Threat) örneğidir?",
+    "secenekler": [
+      "Rakip bir devletin saldırısı",
+      "Memnuniyetsiz bir çalışanın verileri silmesi",
+      "Bir web sitesindeki reklamlar",
+      "Rastgele bir hacker"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "İç tehdit, kurum içindeki yetkili kişilerin (çalışan, ortak vb.) kasıtlı veya kazara verdiği zarardır."
+  },
+  {
+    "soru": "Risk Yönetimi sürecinin üç temel aşaması hangi sırayla gerçekleşebilir?",
+    "secenekler": [
+      "Risk Değerlendirmesi, Riskin Bertaraf Edilmesi, Riskin Kontrolü",
+      "Satın Alma, Kurulum, Silme",
+      "Şifreleme, Yedekleme, Format",
+      "Analiz, Tasarım, Kodlama"
+    ],
+    "dogru_cevap_indeksi": 0,
+    "aciklama": "Önce riskler belirlenir (değerlendirme), sonra önlem alınır (bertaraf) ve son olarak süreç izlenir (kontrol)."
+  }
+]
