@@ -315,6 +315,28 @@
       margin-top: 0.35rem;
     }
 
+    .quiz-nav-top {
+      margin-bottom: 0.75rem;
+    }
+
+    .btn-back {
+      padding: 0.45rem 0.75rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--muted);
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: color 0.15s, border-color 0.15s, background 0.15s;
+    }
+
+    .btn-back:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+      background: rgba(37, 99, 235, 0.06);
+    }
+
     .results-view {
       text-align: center;
     }
@@ -422,6 +444,11 @@
       </div>
 
       <div id="quizView" class="quiz-view" hidden>
+        <div class="quiz-nav-top">
+          <button type="button" id="btnBackToTests" class="btn-back" aria-label="Test seçimine dön">
+            ← Test seçimine
+          </button>
+        </div>
         <div class="progress-row">
           <span id="progressLabel" class="progress-label"></span>
           <div class="progress-bar" aria-hidden="true">
@@ -488,6 +515,7 @@
       const explanationBox = document.getElementById("explanationBox");
       const explanationText = document.getElementById("explanationText");
       const btnNext = document.getElementById("btnNext");
+      const btnBackToTests = document.getElementById("btnBackToTests");
       const resultRing = document.getElementById("resultRing");
       const resultPercentText = document.getElementById("resultPercentText");
       const statCorrect = document.getElementById("statCorrect");
@@ -745,6 +773,7 @@
 
       btnNext.addEventListener("click", onNext);
       btnRestart.addEventListener("click", goToTestSelection);
+      btnBackToTests.addEventListener("click", goToTestSelection);
 
       fetch("./sorular.json")
         .then(function (res) {
