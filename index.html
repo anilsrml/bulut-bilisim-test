@@ -227,8 +227,92 @@
     }
 
     .quiz-view[hidden],
-    .results-view[hidden] {
+    .results-view[hidden],
+    .select-view[hidden] {
       display: none !important;
+    }
+
+    .select-view {
+      text-align: center;
+    }
+
+    .select-view h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    .select-hint {
+      margin: 0 0 1.25rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .test-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .test-card {
+      width: 100%;
+      padding: 1rem 1.1rem;
+      text-align: left;
+      font-size: 0.95rem;
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      background: var(--card);
+      color: var(--text);
+      cursor: pointer;
+      transition: border-color 0.15s, background 0.15s;
+    }
+
+    .test-card:hover {
+      border-color: var(--accent);
+      background: #f8fafc;
+    }
+
+    .test-card-title {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .test-card-meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .jump-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.5rem 0.75rem;
+      margin-bottom: 1rem;
+      font-size: 0.875rem;
+      color: var(--muted);
+    }
+
+    .jump-row label {
+      flex-shrink: 0;
+    }
+
+    #jumpSelect {
+      flex: 1;
+      min-width: 120px;
+      padding: 0.45rem 0.6rem;
+      font-size: 0.9rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--card);
+      color: var(--text);
+    }
+
+    .global-hint {
+      display: block;
+      width: 100%;
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.35rem;
     }
 
     .results-view {
@@ -331,12 +415,23 @@
       <div id="stateLoading" class="state-loading">Sorular yükleniyor…</div>
       <div id="stateError" class="state-error" hidden></div>
 
+      <div id="selectView" class="select-view" hidden>
+        <h3>Test seçin</h3>
+        <p class="select-hint">100 soru üç bölüme ayrılmıştır (35 + 35 + 30). İstediğiniz bölümle başlayın.</p>
+        <div class="test-cards" id="testCards"></div>
+      </div>
+
       <div id="quizView" class="quiz-view" hidden>
         <div class="progress-row">
           <span id="progressLabel" class="progress-label"></span>
           <div class="progress-bar" aria-hidden="true">
             <div id="progressFill" class="progress-fill" style="width: 0%"></div>
           </div>
+        </div>
+        <span id="globalQuestionHint" class="global-hint" hidden></span>
+        <div class="jump-row">
+          <label for="jumpSelect">Soruya git</label>
+          <select id="jumpSelect" aria-label="Soru numarası seçin"></select>
         </div>
         <p id="questionText" class="question-text"></p>
         <div id="optionsContainer" class="options"></div>
@@ -369,7 +464,7 @@
             <div class="stat-label">Yanlış</div>
           </div>
         </div>
-        <button type="button" id="btnRestart" class="btn-secondary">Yeniden Başlat</button>
+        <button type="button" id="btnRestart" class="btn-secondary">Test seçimine dön</button>
       </div>
     </div>
   </div>
@@ -380,10 +475,14 @@
 
       const elLoading = document.getElementById("stateLoading");
       const elError = document.getElementById("stateError");
+      const selectView = document.getElementById("selectView");
+      const testCards = document.getElementById("testCards");
       const quizView = document.getElementById("quizView");
       const resultsView = document.getElementById("resultsView");
       const progressLabel = document.getElementById("progressLabel");
       const progressFill = document.getElementById("progressFill");
+      const globalQuestionHint = document.getElementById("globalQuestionHint");
+      const jumpSelect = document.getElementById("jumpSelect");
       const questionText = document.getElementById("questionText");
       const optionsContainer = document.getElementById("optionsContainer");
       const explanationBox = document.getElementById("explanationBox");
@@ -395,13 +494,50 @@
       const statWrong = document.getElementById("statWrong");
       const btnRestart = document.getElementById("btnRestart");
 
+      let allQuestions = [];
       let questions = [];
+      let partMeta = null;
       let currentIndex = 0;
-      let correctCount = 0;
-      let wrongCount = 0;
-      let answered = false;
+      /** @type {(null | { selectedIndex: number, correct: boolean })[]} */
+      let answerStates = [];
+      let jumpIgnore = false;
 
       const CIRC = 2 * Math.PI * 40;
+
+      function buildParts(total) {
+        if (total === 100) {
+          return [
+            { start: 0, len: 35, title: "Test 1", rangeLabel: "1–35" },
+            { start: 35, len: 35, title: "Test 2", rangeLabel: "36–70" },
+            { start: 70, len: 30, title: "Test 3", rangeLabel: "71–100" }
+          ];
+        }
+        var a = Math.ceil(total / 3);
+        var b = Math.ceil((total - a) / 2);
+        var c = total - a - b;
+        var s0 = 0;
+        var s1 = s0 + a;
+        return [
+          {
+            start: s0,
+            len: a,
+            title: "Test 1",
+            rangeLabel: s0 + 1 + "–" + (s0 + a)
+          },
+          {
+            start: s1,
+            len: b,
+            title: "Test 2",
+            rangeLabel: s1 + 1 + "–" + (s1 + b)
+          },
+          {
+            start: s1 + b,
+            len: c,
+            title: "Test 3",
+            rangeLabel: s1 + b + 1 + "–" + total
+          }
+        ];
+      }
 
       function showLoading(show) {
         elLoading.hidden = !show;
@@ -411,39 +547,103 @@
         showLoading(false);
         elError.textContent = msg;
         elError.hidden = false;
+        selectView.hidden = true;
         quizView.hidden = true;
         resultsView.hidden = true;
       }
 
       function setRingPercent(percent) {
-        const p = Math.max(0, Math.min(100, percent));
-        const offset = CIRC * (1 - p / 100);
+        var p = Math.max(0, Math.min(100, percent));
+        var offset = CIRC * (1 - p / 100);
         resultRing.setAttribute("stroke-dasharray", String(CIRC));
         resultRing.setAttribute("stroke-dashoffset", String(offset));
         resultPercentText.textContent = Math.round(p) + "%";
       }
 
-      function renderQuestion() {
-        const q = questions[currentIndex];
-        const total = questions.length;
-        const n = currentIndex + 1;
+      function computeResults() {
+        var c = 0;
+        var w = 0;
+        var a = 0;
+        answerStates.forEach(function (s) {
+          if (s) {
+            a++;
+            if (s.correct) c++;
+            else w++;
+          }
+        });
+        return { correct: c, wrong: w, answered: a, total: questions.length };
+      }
 
-        progressLabel.textContent = "Soru " + n + " / " + total;
+      function fillJumpSelect() {
+        jumpIgnore = true;
+        jumpSelect.innerHTML = "";
+        var total = questions.length;
+        for (var i = 0; i < total; i++) {
+          var opt = document.createElement("option");
+          opt.value = String(i + 1);
+          var g = partMeta.start + i + 1;
+          opt.textContent = "Soru " + (i + 1) + " (genel " + g + ")";
+          jumpSelect.appendChild(opt);
+        }
+        jumpSelect.value = String(currentIndex + 1);
+        jumpIgnore = false;
+      }
+
+      function renderQuestion() {
+        var q = questions[currentIndex];
+        var total = questions.length;
+        var n = currentIndex + 1;
+        var globalNum = partMeta.start + currentIndex + 1;
+
+        progressLabel.textContent =
+          partMeta.title + " · Soru " + n + " / " + total;
         progressFill.style.width = total ? ((n / total) * 100).toFixed(2) + "%" : "0%";
+        globalQuestionHint.textContent =
+          "Genel soru numarası: " + globalNum + " (tüm testler 1–" + allQuestions.length + ")";
+        globalQuestionHint.hidden = false;
+
+        fillJumpSelect();
 
         questionText.textContent = q.soru;
         optionsContainer.innerHTML = "";
+
+        var saved = answerStates[currentIndex];
+        if (saved) {
+          explanationText.textContent = q.aciklama || "";
+          explanationBox.hidden = false;
+          btnNext.disabled = false;
+          (q.secenekler || []).forEach(function (text, idx) {
+            var btn = document.createElement("button");
+            btn.type = "button";
+            btn.className = "option-btn";
+            btn.dataset.index = String(idx);
+            btn.disabled = true;
+            var span = document.createElement("span");
+            span.className = "option-prefix";
+            span.textContent = LABELS[idx] + ")";
+            btn.appendChild(span);
+            btn.appendChild(document.createTextNode(text));
+            var correctIdx = q.dogru_cevap_indeksi;
+            if (idx === correctIdx) btn.classList.add("correct");
+            else if (idx === saved.selectedIndex) btn.classList.add("wrong");
+            optionsContainer.appendChild(btn);
+          });
+          var isLast = currentIndex === questions.length - 1;
+          btnNext.textContent = isLast ? "Sonuçları Gör" : "Sonraki Soru";
+          return;
+        }
+
         explanationBox.hidden = true;
         explanationText.textContent = "";
         btnNext.disabled = true;
-        answered = false;
+        btnNext.textContent = currentIndex === questions.length - 1 ? "Sonuçları Gör" : "Sonraki Soru";
 
         (q.secenekler || []).forEach(function (text, idx) {
-          const btn = document.createElement("button");
+          var btn = document.createElement("button");
           btn.type = "button";
           btn.className = "option-btn";
           btn.dataset.index = String(idx);
-          const span = document.createElement("span");
+          var span = document.createElement("span");
           span.className = "option-prefix";
           span.textContent = LABELS[idx] + ")";
           btn.appendChild(span);
@@ -454,34 +654,37 @@
       }
 
       function onOptionClick(e) {
-        const btn = e.currentTarget;
-        if (answered) return;
-        answered = true;
+        var btn = e.currentTarget;
+        if (answerStates[currentIndex]) return;
 
-        const selected = parseInt(btn.dataset.index, 10);
-        const q = questions[currentIndex];
-        const correctIdx = q.dogru_cevap_indeksi;
+        var selected = parseInt(btn.dataset.index, 10);
+        var q = questions[currentIndex];
+        var correctIdx = q.dogru_cevap_indeksi;
+        var isCorrect = selected === correctIdx;
 
-        const buttons = optionsContainer.querySelectorAll(".option-btn");
+        answerStates[currentIndex] = {
+          selectedIndex: selected,
+          correct: isCorrect
+        };
+
+        var buttons = optionsContainer.querySelectorAll(".option-btn");
         buttons.forEach(function (b) {
           b.disabled = true;
           b.removeEventListener("click", onOptionClick);
         });
 
-        if (selected === correctIdx) {
+        if (isCorrect) {
           btn.classList.add("correct");
-          correctCount++;
         } else {
           btn.classList.add("wrong");
           buttons[correctIdx].classList.add("correct");
-          wrongCount++;
         }
 
         explanationText.textContent = q.aciklama || "";
         explanationBox.hidden = false;
         btnNext.disabled = false;
 
-        const isLast = currentIndex === questions.length - 1;
+        var isLast = currentIndex === questions.length - 1;
         btnNext.textContent = isLast ? "Sonuçları Gör" : "Sonraki Soru";
       }
 
@@ -489,38 +692,59 @@
         quizView.hidden = true;
         resultsView.hidden = false;
 
-        const total = questions.length;
-        const pct = total ? (correctCount / total) * 100 : 0;
+        var r = computeResults();
+        var denom = r.correct + r.wrong;
+        var pct = denom ? (r.correct / denom) * 100 : 0;
 
-        statCorrect.textContent = String(correctCount);
-        statWrong.textContent = String(wrongCount);
+        statCorrect.textContent = String(r.correct);
+        statWrong.textContent = String(r.wrong);
         setRingPercent(pct);
       }
 
       function onNext() {
-        if (!answered) return;
+        if (!answerStates[currentIndex]) return;
         if (currentIndex >= questions.length - 1) {
           showResults();
           return;
         }
         currentIndex++;
         renderQuestion();
-        btnNext.textContent = "Sonraki Soru";
       }
 
-      function restart() {
+      function startPart(partIndex, parts) {
+        var p = parts[partIndex];
+        partMeta = p;
+        questions = allQuestions.slice(p.start, p.start + p.len);
         currentIndex = 0;
-        correctCount = 0;
-        wrongCount = 0;
-        answered = false;
+        answerStates = questions.map(function () {
+          return null;
+        });
+        selectView.hidden = true;
         resultsView.hidden = true;
         quizView.hidden = false;
         renderQuestion();
-        btnNext.textContent = "Sonraki Soru";
       }
 
+      function goToTestSelection() {
+        currentIndex = 0;
+        answerStates = [];
+        questions = [];
+        partMeta = null;
+        resultsView.hidden = true;
+        quizView.hidden = true;
+        selectView.hidden = false;
+      }
+
+      jumpSelect.addEventListener("change", function () {
+        if (jumpIgnore) return;
+        var v = parseInt(jumpSelect.value, 10) - 1;
+        if (v === currentIndex || v < 0 || v >= questions.length) return;
+        currentIndex = v;
+        renderQuestion();
+      });
+
       btnNext.addEventListener("click", onNext);
-      btnRestart.addEventListener("click", restart);
+      btnRestart.addEventListener("click", goToTestSelection);
 
       fetch("./sorular.json")
         .then(function (res) {
@@ -532,11 +756,32 @@
             showError("Soru listesi boş veya geçersiz.");
             return;
           }
-          questions = data;
+          allQuestions = data;
+          var parts = buildParts(allQuestions.length);
+          testCards.innerHTML = "";
+          parts.forEach(function (p, idx) {
+            var b = document.createElement("button");
+            b.type = "button";
+            b.className = "test-card";
+            b.setAttribute("aria-label", p.title + ", sorular " + p.rangeLabel);
+            var t = document.createElement("span");
+            t.className = "test-card-title";
+            t.textContent = p.title + " — Soru " + p.rangeLabel;
+            var m = document.createElement("span");
+            m.className = "test-card-meta";
+            m.textContent = p.len + " soru";
+            b.appendChild(t);
+            b.appendChild(m);
+            b.addEventListener("click", function () {
+              startPart(idx, parts);
+            });
+            testCards.appendChild(b);
+          });
           showLoading(false);
           elError.hidden = true;
-          quizView.hidden = false;
-          renderQuestion();
+          selectView.hidden = false;
+          quizView.hidden = true;
+          resultsView.hidden = true;
         })
         .catch(function () {
           showError(
