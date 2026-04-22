@@ -1,0 +1,1108 @@
+[
+  {
+    "soru": "İnternet ağ mimarisini oluşturmak için kullanılan iki temel bileşen hangileridir?",
+    "secenekler": [
+      "Bağlantısız paket anahtarlama ve yönlendirici tabanlı bağlantılılık",
+      "Devre anahtarlama ve hub tabanlı bağlantılılık",
+      "ATM ağları ve fiber optik kablolama",
+      "DNS protokolü ve IP adresleme"
+    ],
+    "dogru_cevap_indeksi": 0,
+    "aciklama": "İnternet ağ mimarisini oluşturmak için bağlantısız paket anahtarlama (datagram ağları) ve yönlendirici tabanlı bağlantı kullanılmaktadır."
+  },
+  {
+    "soru": "Bir yönlendiricinin (router) temel işlevi nedir?",
+    "secenekler": [
+      "Yalnızca aynı ağdaki cihazlar arasında veri iletmek",
+      "Birden fazla ağa bağlı olarak paketleri iletmek ve en verimli atlamayı ölçmek",
+      "Fiziksel katmanda bit düzeyinde veri iletmek",
+      "Verileri yalnızca kablolu ortamlar üzerinden aktarmak"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Yönlendiriciler, birden fazla ağa bağlı cihazlardır; ağ trafiğini yönetir ve paket teslimi için en verimli atlamayı ölçerler."
+  },
+  {
+    "soru": "TCP/IP modelinde Taşıma Katmanı'nda yer alan iki temel protokol hangisidir?",
+    "secenekler": [
+      "HTTP ve FTP",
+      "IP ve ICMP",
+      "TCP ve UDP",
+      "SMTP ve POP3"
+    ],
+    "dogru_cevap_indeksi": 2,
+    "aciklama": "Taşıma Katmanı'nda İletim Kontrol Protokolü (TCP) ve Kullanıcı Datagram Protokolü (UDP) yer alır; bu protokoller IP'yi kullanarak uçtan uca iletişim sağlar."
+  },
+  {
+    "soru": "Bağlantısız paket anahtarlama sisteminde her paketin taşıdığı zorunlu bilgi hangisidir?",
+    "secenekler": [
+      "Yalnızca hedef MAC adresi",
+      "IP veya MAC adresi gibi konum bilgileri",
+      "Yalnızca kaynak port numarası",
+      "Şifreleme anahtarı"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Her paket, IP veya MAC adresi gibi gerekli konum bilgilerini taşır; bu bilgiler sayesinde kaynak, ara ve hedef düğümlerde işlenerek yönlendirilir."
+  },
+  {
+    "soru": "Ağ gecikmesi (latency) kavramının doğru tanımı aşağıdakilerden hangisidir?",
+    "secenekler": [
+      "Birim zamanda iletilen veri miktarı",
+      "Ağ üzerindeki maksimum bant genişliği",
+      "Bir paketin bir veri düğümünden diğerine gitmesinin aldığı süre",
+      "Eş zamanlı bağlantı sayısı"
+    ],
+    "dogru_cevap_indeksi": 2,
+    "aciklama": "Gecikme (latency), zaman gecikmesi olarak da adlandırılır ve bir paketin bir veri düğümünden diğerine gitmesinin aldığı süredir."
+  },
+  {
+    "soru": "Bulut platformlarının potansiyeli genellikle neyle paralel olarak artar?",
+    "secenekler": [
+      "Sunucu donanımı fiyatlarının düşmesiyle",
+      "İnternet bağlantısı ve hizmet kalitesindeki gelişmelerle",
+      "Veri merkezi sayısının artmasıyla",
+      "Yazılım lisans maliyetlerinin azalmasıyla"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Bulut platformlarının potansiyeli genellikle internet bağlantısı ve hizmet kalitesindeki gelişmelerle paralel olarak artar."
+  },
+  {
+    "soru": "Otonom bilişimde 'kendi kendini iyileştirme (self-healing)' özelliği ne anlama gelir?",
+    "secenekler": [
+      "Sistemin kötü niyetli saldırılara karşı kendini savunması",
+      "Sistemin donanım veya yazılım arızasından kurtarabilmesi ve sorunları önceden algılaması",
+      "Sistemin performans göstergelerini sürekli iyileştirmesi",
+      "Sistemin kendisini otomatik olarak yapılandırması"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Kendi kendini iyileştirme, bulut hizmetlerinin donanım veya yazılım arızasından kurtarabildiği, sorunları önceden otomatik olarak algılamayı ve tanılamayı sağlayan özelliktir."
+  },
+  {
+    "soru": "Veri merkezinde 'yüksek erişilebilirlik (high availability)' için kullanılan bileşenler arasında hangisi yer almaz?",
+    "secenekler": [
+      "Yedekli kesintisiz güç kaynakları",
+      "Yük dengeleme için iletişim bağlantıları",
+      "Kümelenmiş donanım",
+      "Tek nokta bağlantılı fiber optik hat"
+    ],
+    "dogru_cevap_indeksi": 3,
+    "aciklama": "Yüksek erişilebilirlik için yedekli güç kaynakları, yük dengeleme ve kümelenmiş donanım kullanılır; tek nokta bağlantılı yapılar yedeklilik sağlamaz."
+  },
+  {
+    "soru": "Açık Sanallaştırma Formatı (OVF) hangi sorunu çözmek için geliştirilmiştir?",
+    "secenekler": [
+      "Konteyner güvenlik açıklarını kapatmak",
+      "Sanal disk görüntü formatlarının standartlaştırılması ve taşınabilirlik sorununu gidermek",
+      "Ağ bant genişliğini artırmak",
+      "Otonom bilişim sistemlerini yönetmek"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "OVF (Açık Sanallaştırma Formatı), sanal disk görüntü formatlarının standartlaştırılması için geliştirilmiş ve taşınabilirlik sorununu gidermeye adanmış bir girişimdir."
+  },
+  {
+    "soru": "Veri merkezi standardizasyonu ve modülerliği hangi avantajı sağlar?",
+    "secenekler": [
+      "Güvenlik açıklarını tamamen ortadan kaldırır",
+      "Tedarik, edinim, dağıtım ve bakım süreçlerinde ölçek ekonomileri sağlayarak maliyetleri düşürür",
+      "Ağ gecikmesini sıfıra indirir",
+      "Fiziksel sunucu sayısını artırır"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Modülerlik ve standardizasyon, tedarik, edinim, dağıtım, işletme ve bakım süreçleri için ölçek ekonomileri sağladıklarından yatırım ve işletme maliyetlerini azaltır."
+  },
+  {
+    "soru": "Otonom bilişimde 'kendi kendini koruma (self-protection)' özelliği nasıl güçlendirilmektedir?",
+    "secenekler": [
+      "Sadece fiziksel güvenlik önlemleriyle",
+      "Veri bilimi ve yapay zeka teknolojileriyle",
+      "Manuel izleme sistemleriyle",
+      "Yedek güç kaynaklarıyla"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Kendi kendini koruma özelliği, veri bilimi ve yapay zeka teknolojileri ile otonom bilişim güçlendirilmektedir."
+  },
+  {
+    "soru": "NoSQL kümeleme teknolojisi bulut ortamında öncelikle ne için kullanılır?",
+    "secenekler": [
+      "Yalnızca ilişkisel veri tabanları için",
+      "Çeşitli bulut tabanlı çözümler için bir dağıtım ortamı olarak",
+      "Ağ güvenlik duvarı olarak",
+      "İşletim sistemi sanallaştırması için"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "NoSQL kümeleme, NoSQL veri tabanları dahil olmak üzere çeşitli bulut tabanlı çözümler için bir dağıtım ortamı olarak kullanılabilir."
+  },
+  {
+    "soru": "Sunucusuz (serverless) ortamın temel özelliği nedir?",
+    "secenekler": [
+      "Fiziksel sunucu gerektirmeden bulut hizmeti sunmak",
+      "Uygulamalar için çalışma zamanı kaynaklarını otomatik sağlayarak temel kaynakları kurmaya gerek kalmadan dağıtım yapılabilmesi",
+      "Yalnızca sanal makineler üzerinde çalışmak",
+      "Ağ bağlantısı olmadan çalışabilmek"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Sunucusuz ortam, uygulamalar için çalışma zamanı kaynaklarını otomatik olarak sağlayan ve temel kaynakları kurmaya gerek kalmadan dağıtılabilen teknolojilerden oluşur."
+  },
+  {
+    "soru": "'En iyi çaba' (best effort) hizmet kalitesine sahip paket ağları paketleri hangi esasa göre iletir?",
+    "secenekler": [
+      "Öncelik sırasına göre",
+      "Paket boyutuna göre",
+      "İlk gelen/ilk hizmet esasına göre",
+      "Hedef adrese göre"
+    ],
+    "dogru_cevap_indeksi": 2,
+    "aciklama": "'En iyi çaba' QoS'a sahip paket ağları, genellikle paketleri ilk gelen/ilk hizmet esasına göre iletir."
+  },
+  {
+    "soru": "İnternet'in en büyük omurga ağları stratejik olarak nasıl birbirine bağlanır?",
+    "secenekler": [
+      "Uydu bağlantıları aracılığıyla",
+      "Dünyanın çok uluslu ağlarını birbirine bağlayan çekirdek yönlendiriciler aracılığıyla",
+      "Yerel alan ağları (LAN) üzerinden",
+      "Kablosuz hücresel ağlar üzerinden"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "İSS'ler tarafından kurulan internetin en büyük omurga ağları, dünyanın çok uluslu ağlarını birbirine bağlayan çekirdek yönlendiriciler tarafından stratejik olarak birbirine bağlanır."
+  },
+  {
+    "soru": "Bulut tüketicileri internete bağlı olmayan bir bağlantı yöntemiyle buluta nasıl erişebilir?",
+    "secenekler": [
+      "Yalnızca Wi-Fi ile",
+      "LAN'lardaki özel ve adanmış ağ bağlantılarını kullanarak",
+      "Hücresel ağlar üzerinden",
+      "Uydu internet bağlantısıyla"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Bulut tüketicileri, yalnızca LAN'lardaki özel ve adanmış ağ bağlantılarını kullanarak buluta erişme seçeneğine sahiptir."
+  },
+  {
+    "soru": "Fiziksel ağın iki temel bileşeni hangilerdir?",
+    "secenekler": [
+      "İnternet katmanı ve uygulama katmanı",
+      "Veri Bağlantı Katmanı ve Fiziksel Katman",
+      "Taşıma katmanı ve oturum katmanı",
+      "TCP ve UDP protokolleri"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Fiziksel ağlar iki temel bileşenden oluşur: komşu düğümler arasındaki veri transferini kontrol eden Veri Bağlantı Katmanı ve verileri bit düzeyinde ileten Fiziksel Katman."
+  },
+  {
+    "soru": "TCP/IP modelinde uygulama katmanına ait olan protokol hangisidir?",
+    "secenekler": [
+      "IP",
+      "TCP",
+      "HTTP",
+      "Ethernet"
+    ],
+    "dogru_cevap_indeksi": 2,
+    "aciklama": "HTTP (web), SMTP (e-posta), BitTorrent ve SIP gibi protokoller uygulama katmanına aittir; taşıma katmanı protokollerini kullanarak veri aktarım yöntemlerini standart hale getirir."
+  },
+  {
+    "soru": "Bulut veri merkezinde sanallaştırma açısından 'performans yükü' ne zaman sorun oluşturur?",
+    "secenekler": [
+      "Yüksek bant genişliğinde",
+      "Çok az kullanımla yüksek iş yüklerine sahip karmaşık sistemlerde",
+      "Düşük gecikme gereksinimlerinde",
+      "Küçük ölçekli uygulamalarda"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Sanallaştırma, kaynak paylaşımı ve çoğaltma için çok az kullanımla yüksek iş yüklerine sahip karmaşık sistemler için ideal olmayabilir; kötü formüle edilmiş bir plan aşırı performans yüküne neden olabilir."
+  },
+  {
+    "soru": "DTGOV'un veri merkezleri arası ağ yapısında 'intra-AS yönlendirme alanı' ne tarafından oluşturulur?",
+    "secenekler": [
+      "Harici internet servis sağlayıcıları",
+      "Veri merkezlerini LAN'larla birbirine bağlayan bağlantılar",
+      "Güvenlik duvarları",
+      "Depolama alan ağı anahtarları"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "DTGOV'un ağ yapısında veri merkezlerini LAN'larla birbirine bağlayan bağlantılar intra-AS yönlendirme alanını oluşturur."
+  },
+  {
+    "soru": "Sanallaştırma teknolojisinin temel amacı nedir?",
+    "secenekler": [
+      "Fiziksel donanım maliyetlerini artırmak",
+      "Benzersiz BT donanımını öykünülmüş ve standartlaştırılmış yazılım tabanlı kopyalara çeviren bir dönüştürme işlemi gerçekleştirmek",
+      "Ağ bant genişliğini azaltmak",
+      "İşletim sistemlerini kaldırmak"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Sanallaştırma, benzersiz BT donanımını öykünülmüş ve standartlaştırılmış yazılım tabanlı kopyalara çeviren bir dönüştürme işlemidir; donanım bağımsızlığı sağlar."
+  },
+  {
+    "soru": "Sunucu konsolidasyonu (server consolidation) ne anlama gelir?",
+    "secenekler": [
+      "Birden fazla fiziksel sunucunun tek bir sunucuya birleştirilmesi",
+      "Farklı sanal sunucuların tek bir fiziksel sunucuyu paylaşması",
+      "Fiziksel sunucuların farklı veri merkezlerine taşınması",
+      "Sunucuların bulut ortamından şirket içine alınması"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Sunucu konsolidasyonu, farklı sanal sunucuların tek bir fiziksel sunucuyu paylaşmasını sağlayan sanallaştırma teknolojisinin bu işlemine verilen addır."
+  },
+  {
+    "soru": "Tip 1 hipervizör (bare-metal) ile Tip 2 hipervizör arasındaki temel fark nedir?",
+    "secenekler": [
+      "Tip 1 daha az sanal makine çalıştırabilir",
+      "Tip 1 doğrudan donanım üzerine kurulurken, Tip 2 mevcut bir işletim sistemi üzerine kurulur",
+      "Tip 2 daha güvenlidir",
+      "Tip 1 yalnızca Windows üzerinde çalışır"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Tip 1 hipervizör doğrudan fiziksel donanım üzerine kurulur ve ana işletim sistemi gerektirmez; Tip 2 ise mevcut bir işletim sistemi üzerine kurulur."
+  },
+  {
+    "soru": "Aşağıdakilerden hangisi Tip 1 (bare-metal) hipervizörüne örnek değildir?",
+    "secenekler": [
+      "VMware ESXi",
+      "Microsoft Hyper-V (Sunucu sürümü)",
+      "VirtualBox",
+      "Xen"
+    ],
+    "dogru_cevap_indeksi": 2,
+    "aciklama": "VirtualBox, ana bilgisayar işletim sistemi üzerine kurulan Tip 2 hipervizörüdür. VMware ESXi, Hyper-V (Sunucu) ve Xen ise Tip 1 hipervizörleridir."
+  },
+  {
+    "soru": "Sanal disk görüntüleri nasıl oluşturulur ve ne içerir?",
+    "secenekler": [
+      "Yalnızca ağ yapılandırma bilgilerini içerir",
+      "Sabit disk içeriğinin ikili dosya kopyalarını içeren görüntüler olarak oluşturulur",
+      "İşletim sistemi çekirdeğinin şifreli kopyalarını içerir",
+      "Fiziksel donanım spesifikasyonlarını içerir"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Sanal sunucular, sabit disk içeriğinin ikili dosya kopyalarını içeren sanal disk görüntüleri olarak oluşturulur; bu görüntüler kopyalanabilir ve taşınabilir."
+  },
+  {
+    "soru": "Docker'ın konteyner teknolojisine katkısı nedir?",
+    "secenekler": [
+      "İşletim sistemi çekirdeğini sanallaştırmak",
+      "Uygulamayı ve bağımlılıklarını kapsayıcılar içinde paketleyerek her ortamda aynı şekilde çalışmasını garantilemek",
+      "Yalnızca Linux sistemlerinde kullanılabilen bir hipervizör sunmak",
+      "Bulut depolama hizmetleri sağlamak"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Docker, uygulama ve onun bağımlılıklarını kapsayıcılar içinde paketleyerek taşınabilirlik sağlar ve her ortamda aynı şekilde çalışmasını garantiler."
+  },
+  {
+    "soru": "Çok kiracılı (multitenant) uygulama tasarımının temel amacı nedir?",
+    "secenekler": [
+      "Her kiracı için ayrı fiziksel sunucu sağlamak",
+      "Birden fazla kullanıcının (kiracının) aynı uygulama mantığına aynı anda erişmesini sağlamak",
+      "Kiracıların birbirinin verilerine erişmesine izin vermek",
+      "Tek bir kiracıya ayrılmış kaynaklar sunmak"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Çok kiracılı uygulama tasarımı, birden çok kullanıcının (kiracının) aynı uygulama mantığına aynı anda erişmesini sağlamak için oluşturulmuştur."
+  },
+  {
+    "soru": "Çok kiracılı uygulamalarda 'kullanım yalıtımı' ne anlama gelir?",
+    "secenekler": [
+      "Kiracıların farklı ağlara bağlanması",
+      "Bir kiracının kullanım davranışının diğer kiracıların uygulama kullanılabilirliğini ve performansını etkilememesi",
+      "Her kiracının ayrı fiziksel sunucu kullanması",
+      "Kiracıların birbirinin verilerini görmesi"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Kullanım yalıtımı, bir kiracının kullanım davranışının diğer kiracıların uygulama kullanılabilirliğini ve performansını etkilememesi anlamına gelir."
+  },
+  {
+    "soru": "REST (Representational State Transfer) mimarisinin temel kısıtlamalarından biri olan 'durumsuzluk (stateless)' ne anlama gelir?",
+    "secenekler": [
+      "Sunucunun istemci bilgilerini kalıcı olarak saklaması",
+      "Her isteğin bağımsız şekilde işlenmesi",
+      "İstemci ve sunucunun aynı durum bilgisini paylaşması",
+      "Verilerin önbellekte tutulması"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "REST mimarisindeki durumsuzluk kısıtlaması, her isteğin bağımsız şekilde işlenmesi anlamına gelir; sunucu önceki isteklere ilişkin bilgi saklamaz."
+  },
+  {
+    "soru": "WSDL (Web Service Description Language) ne için kullanılır?",
+    "secenekler": [
+      "Web sitelerinin görsel tasarımı için",
+      "Bir web servisinin uygulama programlama arayüzünü (API) tanımlamak için",
+      "Ağ güvenlik duvarı kuralları oluşturmak için",
+      "Veritabanı şemaları oluşturmak için"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "WSDL, bir web servisinin uygulama programlama arayüzünü (API) tanımlayan bir WSDL tanımı oluşturmak için kullanılan işaretleme dilidir."
+  },
+  {
+    "soru": "SOAP mesajları hangi bölümlerden oluşur?",
+    "secenekler": [
+      "Sorgu ve yanıt bölümleri",
+      "Gövde (body) ve başlık (header) bölümleri",
+      "İstek ve oturum bölümleri",
+      "Şifreleme ve kimlik doğrulama bölümleri"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "SOAP mesajları gövde (body) ve başlık (header) bölümlerinden oluşur; gövde ana mesaj içeriğini, başlık ise çalışma zamanında işlenebilecek meta verileri içerir."
+  },
+  {
+    "soru": "Pasif hizmet temsilcisi (passive service agent) nasıl çalışır?",
+    "secenekler": [
+      "Mesaj içeriğini değiştirir ve yönlendirir",
+      "Mesajı okur ancak değiştirmez; izleme, günlüğe kaydetme veya raporlama amacıyla içeriğin belirli bölümlerini yakalar",
+      "İletileri engeller ve şifreler",
+      "Sadece başarısız iletiler üzerinde işlem yapar"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Pasif hizmet temsilcileri mesaj içeriklerini değiştirmez; bunun yerine mesajı okurlar ve genellikle izleme, günlüğe kaydetme veya raporlama amacıyla içeriğin belirli bölümlerini yakalarlar."
+  },
+  {
+    "soru": "gRPC, GraphQL ve Falcor hangi soruna yanıt olarak geliştirilmiştir?",
+    "secenekler": [
+      "Veri tabanı yönetim sorunlarına",
+      "RESTful ve geleneksel RPC çözümlerinin sınırlamalarını gidermek amacıyla",
+      "Konteyner orkestrasyonu sorunlarına",
+      "Bulut depolama maliyetlerini azaltmak için"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "gRPC (Google), GraphQL (Facebook) ve Falcor (Netflix), hem RESTful mimarilerin hem de geleneksel RPC çözümlerinin sınırlamalarını gidermek amacıyla geliştirilmiş çağdaş protokollerdir."
+  },
+  {
+    "soru": "Sanallaştırma ile çok kiracılılık arasındaki temel fark nedir?",
+    "secenekler": [
+      "Sanallaştırma daha güvenlidir",
+      "Sanallaştırma sunucu ortamının birden fazla sanal kopyasını sunarken, çok kiracılılık tek bir uygulamayı birden fazla kullanıcıyla paylaşır",
+      "Çok kiracılılık daha az maliyetlidir",
+      "Sanallaştırma yalnızca özel bulutlarda kullanılır"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Sanallaştırma ile sunucu ortamının birden fazla sanal kopyası tek bir fiziksel sunucu tarafından barındırılabilirken; çok kiracılılıkta bir uygulama birden çok farklı kullanıcı tarafından paylaşılır."
+  },
+  {
+    "soru": "Sanallaştırma Altyapı Yönetimi (VIM) araçlarının temel özelliği nedir?",
+    "secenekler": [
+      "Yalnızca fiziksel donanımı yönetmek",
+      "Yönetim görevlerini otomatikleştirebilen ve sanallaştırılmış BT kaynaklarını toplu olarak yöneten merkezi bir yönetim modülüne dayanmak",
+      "Yalnızca ağ trafiğini izlemek",
+      "Sanal disk görüntülerini yedeklemek"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "VIM araçları, yönetim görevlerini otomatikleştirebilen ve sanallaştırılmış BT kaynaklarını toplu olarak yöneten, denetleyici olarak da bilinen merkezi bir yönetim modülüne dayanan araçlardır."
+  },
+  {
+    "soru": "Konteyner teknolojisi tarihsel olarak ilk hangi sistemde ortaya çıkmıştır?",
+    "secenekler": [
+      "Windows NT sistemlerinde",
+      "Unix sistemlerinde",
+      "IBM mainframe sistemlerinde",
+      "Android işletim sisteminde"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Konteyner kavramı, 1970'lerden bu yana varlığını sürdürmekte olup ilk olarak Unix sistemlerinde uygulama kodlarını daha iyi şekilde birbirinden ayırmak amacıyla kullanılan bir yetenek olarak ortaya çıkmıştır."
+  },
+  {
+    "soru": "Konteyner teknolojisini Linux sistemlerinde ana akım haline getiren önemli ilerlemeyi temsil eden sistemler hangileridir?",
+    "secenekler": [
+      "Docker, Kubernetes ve OpenShift",
+      "Apache Mesos, Google Borg ve Facebook Tupperware",
+      "VMware vSphere, Hyper-V ve Xen",
+      "Amazon EC2, Azure VMs ve GCP Compute Engine"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Apache Mesos, Google Borg ve Facebook Tupperware, Linux sistemler üzerindeki konteyner kullanımında önemli bir ilerlemeyi temsil etmiştir."
+  },
+  {
+    "soru": "Konteynerleştirmenin bulut bilişim için önemi nedir?",
+    "secenekler": [
+      "Fiziksel donanım maliyetlerini artırması",
+      "Sadeleştirilmiş ve esnek dağıtım mimarisiyle maliyetleri azaltma ve iş çevikliğini artırma",
+      "Ağ bant genişliğini kısıtlaması",
+      "Güvenlik açıklarını çoğaltması"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Konteynerleştirme ile sağlanan sadeleştirilmiş ve esnek dağıtım mimarisi maliyetleri azaltma ve iş çevikliğini artırma gibi bulut bilişimin temel iş hedeflerini destekler."
+  },
+  {
+    "soru": "Hipervizörün temel işlevi nedir?",
+    "secenekler": [
+      "Ağ trafiğini yönlendirmek",
+      "Fiziksel bir sunucudan birden fazla sanal sunucu oluşturup çalıştırmaktan sorumlu olmak",
+      "Veri tabanlarını yönetmek",
+      "Güvenlik duvarı kurallarını uygulamak"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Fiziksel bir sunucudan birden fazla sanal sunucu oluşturup çalıştırmaktan sorumlu bileşene hipervizör denir. Sanal sunucular, hipervizör tarafından kendilerine sunulan taklit donanımı gerçek donanım olarak algılar."
+  },
+  {
+    "soru": "Tip 2 sanallaştırma ortamının (işletim sistemi tabanlı) bir dezavantajı nedir?",
+    "secenekler": [
+      "Konteyner kullanımına izin vermemesi",
+      "Ana bilgisayar işletim sisteminin CPU, bellek ve diğer donanım BT kaynaklarını tüketmesi",
+      "Birden fazla sanal makine çalıştıramaması",
+      "Yalnızca Linux işletim sistemlerini desteklemesi"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Tip 2 sanallaştırmada ana bilgisayar işletim sistemi CPU, bellek ve diğer donanım BT kaynaklarını tüketir; bu da sistem kaynakları üzerinde ek yük oluşturur."
+  },
+  {
+    "soru": "Konteyner ile sanal sunucu arasındaki temel fark nedir?",
+    "secenekler": [
+      "Konteynerler daha pahalıdır",
+      "Sanal sunucu tüm işletim sisteminin sanal kopyasını sunarken, konteyner yalnızca barındırdığı yazılımın ihtiyaç duyduğu işletim sistemi kaynaklarının bir alt kümesini sağlar",
+      "Konteynerler yalnızca üretim ortamında kullanılır",
+      "Sanal sunucular daha hızlı başlar"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Sanal sunucu, fiziksel bir sunucunun tüm işletim sisteminin sanal kopyasını sunarken; konteyner yalnızca barındırdığı yazılım(lar)ın ihtiyaç duyduğu işletim sistemi kaynaklarının bir alt kümesini sağlar."
+  },
+  {
+    "soru": "Pod nedir ve temel özelliği nedir?",
+    "secenekler": [
+      "Yalnızca tek bir konteyneri barındırabilen yapı",
+      "Tek bir konteyneri ya da ortak depolama ve/veya ağ kaynaklarını paylaşan birden fazla konteyner grubunu barındırabilen özel bir sistem konteyneri türü",
+      "Birden fazla fiziksel sunucuya yayılabilen konteyner yapısı",
+      "Kapsayıcı orkestrasyon platformunun ağ bileşeni"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Pod, tek bir konteyneri ya da ortak depolama ve/veya ağ kaynaklarını paylaşan, aynı zamanda nasıl çalıştırılacaklarını belirleyen ortak yapılandırmalara sahip birden fazla konteyner grubunu barındırabilen özel bir sistem konteyneri türüdür."
+  },
+  {
+    "soru": "Tek bir pod'un kaç host üzerinde bulunabileceği konusundaki kural nedir?",
+    "secenekler": [
+      "Birden fazla host'a yayılabilir",
+      "Yalnızca tek bir host üzerinde bulunabilir",
+      "En fazla 3 host üzerinde çalışabilir",
+      "Küme boyutuna göre değişir"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Tek bir pod birden fazla host'a yayılacak şekilde çalıştırılamaz; her pod yalnızca tek bir host üzerinde bulunabilir."
+  },
+  {
+    "soru": "Yük Dengelemeli Küme (Load-Balanced Cluster) ne sağlar?",
+    "secenekler": [
+      "Yalnızca yüksek erişilebilirlik",
+      "İş yüklerini host'lar arasında dağıtarak kaynak kapasitesini artırma ve kaynak yönetiminin merkezileşmesi",
+      "Yalnızca dikey ölçekleme",
+      "Veri yedekleme ve kurtarma"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Yük dengelemeli küme, iş yüklerini host'lar arasında dağıtarak kaynak kapasitesini artırmakta uzmanlaşmıştır ve aynı zamanda kaynak yönetiminin merkezileşmesini sağlar."
+  },
+  {
+    "soru": "Yüksek Erişilebilirlik Kümesi (HA Cluster) nasıl çalışır?",
+    "secenekler": [
+      "Yalnızca tek bir host üzerinde çalışır",
+      "Birden fazla host arızalansa bile sistemin çalışır durumda kalmasını failover sistemi sayesinde sağlar",
+      "Sadece dikey ölçekleme destekler",
+      "Yük dengelemesi yapmaz"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "HA Cluster, birden fazla host arızalansa bile sistemin çalışır durumda kalmasını sağlar; kümelenmiş kaynakların yedekli sürümlerini içerir ve failover sistemi sayesinde arızaları izleyerek iş yüklerini otomatik olarak yönlendirir."
+  },
+  {
+    "soru": "Konteynerleştirme teknolojisinin 'artırılmış dayanıklılık (resiliency)' faydası nasıl sağlanır?",
+    "secenekler": [
+      "Veriler birden fazla veri merkezinde yedeklenerek",
+      "Sistemde bir hata meydana geldiğinde yeni çözüm örnekleri (instance) otomatik olarak oluşturularak sistemin çalışmaya devam etmesi sağlanarak",
+      "Fiziksel sunucu sayısını artırarak",
+      "Manuel yeniden başlatma prosedürleriyle"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Konteyner ortamlarının özel özellikleri sayesinde sistemde bir hata meydana geldiğinde yeni çözüm örnekleri otomatik olarak oluşturularak sistemin çalışmaya devam etmesi sağlanır."
+  },
+  {
+    "soru": "Konteynerleştirmenin en büyük güvenlik risklerinden biri olan 'konteynerleştirme saldırı tehdidi' neden önemlidir?",
+    "secenekler": [
+      "Konteynerler ağdan izole olduğu için",
+      "Aynı fiziksel sunucu üzerinde çalışan tüm konteynerler aynı işletim sistemi çekirdeğini (kernel) paylaştığından bir konteynerin yöneticisi çekirdeğe dolaylı erişim sağlayabilir",
+      "Her konteynerin ayrı güvenlik duvarı olmaması",
+      "Konteyner imajlarının şifrelenmemesi"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Aynı fiziksel sunucu üzerinde çalışan tüm konteynerler aynı işletim sistemi çekirdeğini paylaşır; bu nedenle bir konteynerin yöneticisi çekirdeğe dolaylı erişim sağlayabilir ve bu önemli bir güvenlik açığı oluşturur."
+  },
+  {
+    "soru": "Konteyner paket yöneticisinin temel görevi nedir?",
+    "secenekler": [
+      "Fiziksel sunucuların bakımını yapmak",
+      "Konteynerleştirilmiş uygulamaların paketlenmesini ve dağıtımını kolaylaştırmak",
+      "Ağ güvenliğini sağlamak",
+      "Hipervizörleri yönetmek"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Konteyner paket yöneticisi, konteynerleştirilmiş uygulamaların paketlenmesini ve dağıtımını kolaylaştıran bir araçtır."
+  },
+  {
+    "soru": "Dağıtım optimize edici (deployment optimizer) hangi faktörü dikkate alır?",
+    "secenekler": [
+      "Yalnızca donanım maliyetini",
+      "Yakınlık/uzaklık kuralları, veri yakınlığı, iş yükü çakışması ve donanım/yazılım politika kısıtlamalarını",
+      "Sadece ağ bant genişliğini",
+      "Yalnızca konteyner imaj boyutunu"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Dağıtım optimize edici; donanım/yazılım politika kısıtlamaları, yakınlık ve uzaklık kuralları, veri yakınlığı ve iş yükü çakışması gibi faktörleri dikkate alarak konteynerlerin dağıtılacağı en uygun hedefleri belirler."
+  },
+  {
+    "soru": "Docker Compose ve Helm hangi tür araçlardır?",
+    "secenekler": [
+      "Konteyner orkestrasyon platformları",
+      "Konteyner paket yöneticileri",
+      "İmaj kayıt depoları",
+      "Tip 1 hipervizörler"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Docker Compose ve Helm, en yaygın kullanılan konteyner paket yöneticilerinden bazılarıdır."
+  },
+  {
+    "soru": "Konteynerleştirme teknolojisinin 'sürüm desteği (version support)' faydası ne anlama gelir?",
+    "secenekler": [
+      "Sistemin otomatik güncellenmesi",
+      "Yazılım kodunun ve bağımlılıkların sürümlerinin izlenmesini sağlaması, farklı sürümlerin takibine ve önceki sürümlere geri dönüşe imkân tanıması",
+      "Yalnızca en son sürümün desteklenmesi",
+      "Lisans yönetimini kolaylaştırması"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Konteynerler yazılım kodunun ve bağımlılıklarının sürümlerinin izlenmesini sağlar; bazı platformlar geliştiricilerin farklı sürümleri takip etmesine, farkları incelemesine ve önceki sürümlere geri dönmesine imkân tanır."
+  },
+  {
+    "soru": "Üretim ortamlarında (production environment) hangi sanallaştırma türü tercih edilir?",
+    "secenekler": [
+      "Tip 2 Sanallaştırma",
+      "Tip 1 Sanallaştırma (Bare-metal hipervizör)",
+      "Yazılım tabanlı emülasyon",
+      "İşletim sistemi tabanlı sanallaştırma"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Çoğu üretim ortamında, işletim sistemi yerine doğrudan bir hipervizörün kurulu olduğu Tip 1 sanallaştırma ortamı tercih edilir; bu yapı daha izole, güvenli ve kaynak açısından verimli bir konteyner çalıştırma ortamı sunar."
+  },
+  {
+    "soru": "Konteyner orkestrasyonu (container orchestration) ne anlama gelir?",
+    "secenekler": [
+      "Konteynerleri manuel olarak yönetmek",
+      "Dağıtık bir bilgi işlem ortamında kapsayıcılaştırılmış uygulamaların dağıtımını, ölçeklendirilmesini ve yönetimini otomatikleştirme süreci",
+      "Konteyner imajlarını oluşturmak",
+      "Fiziksel sunucuları yönetmek"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Konteyner orkestrasyonu, dağıtık bir bilgi işlem ortamında kapsayıcılaştırılmış uygulamaların dağıtımını, ölçeklendirilmesini ve yönetimini otomatikleştirme sürecine verilen addır."
+  },
+  {
+    "soru": "Kubernetes açık kaynak platformu hangi büyük bulut sağlayıcılarında hizmet olarak sunulmaktadır?",
+    "secenekler": [
+      "IBM Cloud, Oracle Cloud ve Alibaba Cloud",
+      "AWS (EKS), Microsoft Azure (AKS) ve Google (GKE)",
+      "VMware, Citrix ve Red Hat",
+      "DigitalOcean, Linode ve Vultr"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Kubernetes büyük bulut sağlayıcılarında AWS → Elastic Kubernetes Service (EKS), Microsoft Azure → Azure Kubernetes Service (AKS), Google → Google Kubernetes Engine (GKE) olarak sunulmaktadır."
+  },
+  {
+    "soru": "Konteyner orkestratörünün 'hizmet keşfi (service discovery)' görevi nedir?",
+    "secenekler": [
+      "Yeni konteyner imajları keşfetmek",
+      "Uygulamaların ağ üzerinden birbirini bulmasını ve iletişim kurmasını sağlayan bir hizmet kaydı (registry) tutmak",
+      "Güvenlik açıklarını tespit etmek",
+      "Depolama birimlerini keşfetmek"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Orkestratör, uygulamaların ağ üzerinden birbirini bulmasını ve iletişim kurmasını sağlayan bir hizmet kaydı (registry) tutarak hizmet keşfi sağlar."
+  },
+  {
+    "soru": "Konteyner orkestratöründe 'Zamanlayıcı (Scheduler)' bileşeni hangi kararı verir?",
+    "secenekler": [
+      "Konteyner imajının hangi kayıt deposuna gönderileceğine",
+      "Yeni bir kapsayıcının kümedeki hangi düğüme yerleştirileceğine, kaynak kullanılabilirliği ve iş yükü dengesi gibi faktörleri dikkate alarak",
+      "Ağ trafiğinin hangi yönde akacağına",
+      "Güvenlik politikalarının nasıl uygulanacağına"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Zamanlayıcı (Scheduler), yeni bir kapsayıcının kümedeki hangi düğüme yerleştirileceğine karar verir; bu kararı verirken kaynak kullanılabilirliği ve iş yükü dengesi gibi faktörleri dikkate alır."
+  },
+  {
+    "soru": "Kaplama (Overlay) ağı ne zaman kullanılır?",
+    "secenekler": [
+      "Aynı fiziksel sunucu üzerindeki konteynerler arasındaki iletişim için",
+      "Farklı sunucularda çalışan konteyner motorlarının farklı sunuculardaki konteynerler arasında iletişim kurması için",
+      "Yalnızca şifreli iletişim için",
+      "Yük dengeleme için"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Kaplama (Overlay) ağı, farklı sunucularda çalışan konteyner motorlarının, farklı sunuculardaki konteynerler arasında iletişim kurmasını sağlar."
+  },
+  {
+    "soru": "Ana (Host) ağı hangi konteynerler arasında iletişim sağlar?",
+    "secenekler": [
+      "Farklı fiziksel sunuculardaki konteynerler arasında",
+      "Aynı fiziksel sunucu (host) üzerindeki konteynerler arasında",
+      "Farklı veri merkezlerindeki konteynerler arasında",
+      "Yalnızca pod içindeki konteynerler arasında"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Ana (Host) ağı, aynı fiziksel sunucu (host) üzerindeki konteynerler arasında iletişim sağlamak için tek bir konteyner motoru tarafından yönetilir."
+  },
+  {
+    "soru": "Zengin (Rich) kapsayıcı kavramı ne anlama gelir?",
+    "secenekler": [
+      "Daha fazla depolama kapasitesine sahip konteynerler",
+      "Daha fazla özelliğe sahip kapsayıcılar; kaynak sınırlandırma, kullanım kayıtları toplama gibi gelişmiş yetenekler sunanlar",
+      "Daha güçlü CPU'ya sahip konteynerler",
+      "Daha fazla ağ bağlantısı olan konteynerler"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Farklı kapsayıcılaştırma platformları destekledikleri özellik yelpazesi açısından farklılık gösterebilir; daha fazla özelliğe (kaynak sınırlandırma, kullanım kayıtları, proxy vb.) sahip kapsayıcılara zengin kapsayıcılar denir."
+  },
+  {
+    "soru": "İki temel kapsayıcı imajı türü nelerdir?",
+    "secenekler": [
+      "Statik ve dinamik kapsayıcı imajları",
+      "Temel (Base) kapsayıcı imajları ve özelleştirilmiş (customized) kapsayıcı imajları",
+      "Şifreli ve şifresiz kapsayıcı imajları",
+      "Yerel ve uzak kapsayıcı imajları"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "İki temel kapsayıcı imajı türü vardır: özelleştirilmiş imajlar için şablon görevi gören Temel (Base) Kapsayıcı İmajları ve kapsayıcı motoru tarafından gerçek kapsayıcıları dağıtmak için kullanılan Özelleştirilmiş Kapsayıcı İmajları."
+  },
+  {
+    "soru": "Kapsayıcı imajlarının 'değiştirilemezlik (immutability)' özelliği ne anlama gelir?",
+    "secenekler": [
+      "İmajlar yalnızca yöneticiler tarafından değiştirilebilir",
+      "Bir kez oluşturulduktan sonra yama yapılamaz, güncelleme uygulanamaz veya başka herhangi bir değişiklik yapılamaz",
+      "İmajlar şifrelendiği için değiştirilemez",
+      "İmajlar yalnızca salt okunur depolarda saklanır"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Kapsayıcı imajlarının önemli bir özelliği bir kez oluşturulduktan sonra değiştirilemez olmalarıdır; yama yapılamaz, güncelleme uygulanamaz. Değişiklik gerekiyorsa yeni bir imaj üretilmelidir."
+  },
+  {
+    "soru": "İşletim sistemi çekirdeği (kernel) kapsayıcı imajı tarafından nasıl işlenir?",
+    "seceneksel": [
+      "Çekirdek imaj tarafından soyutlanır",
+      "Çekirdek imaja dahil edilir",
+      "Çekirdek kapsayıcı imajı tarafından soyutlanmaz; bunun yerine kapsayıcı motoru tarafından kapsanır",
+      "Çekirdek konteyner başına ayrı olarak kopyalanır"
+    ],
+    "secenekler": [
+      "Çekirdek imaj tarafından soyutlanır",
+      "Çekirdek imaja dahil edilir ve özelleştirilir",
+      "Çekirdek kapsayıcı imajı tarafından soyutlanmaz; bunun yerine kapsayıcı motoru tarafından kapsanır",
+      "Çekirdek konteyner başına ayrı olarak kopyalanır"
+    ],
+    "dogru_cevap_indeksi": 2,
+    "aciklama": "Çekirdek, kapsayıcı imajı tarafından soyutlanmaz; bunun yerine kapsayıcı motoru tarafından kapsanır (yönetilir). Kapsayıcı imajına çekirdek dışındaki işletim sistemi bileşenleri dahil edilebilir."
+  },
+  {
+    "soru": "Kapsayıcı yapı dosyası (container build file) ne amaçla kullanılır?",
+    "secenekler": [
+      "Ağ yapılandırmasını tanımlamak için",
+      "Özelleştirilmiş bir kapsayıcı imajında nelerin yer alacağını tanımlayan, insan tarafından düzenlenebilir ve makine tarafından işlenebilir bir yapılandırma dosyası",
+      "Fiziksel sunucu BIOS ayarlarını yapılandırmak için",
+      "Ağ güvenlik kurallarını belirlemek için"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Kapsayıcı yapı dosyası, özelleştirilmiş bir kapsayıcı imajında nelerin yer alacağını (veya nelerin soyutlanacağını) tanımlayan insan tarafından düzenlenebilir ve makine tarafından işlenebilir bir yapılandırma dosyasıdır."
+  },
+  {
+    "soru": "Kapsayıcı imajı katmanları hakkında doğru olan ifade hangisidir?",
+    "secenekler": [
+      "Tüm katmanlar okuma-yazma modundadır",
+      "En son katman hariç tüm katmanlar salt okunur (read-only) durumdadır",
+      "Katmanlar yalnızca yürütülebilir dosyaları içerebilir",
+      "Her katman ayrı bir konteyner olarak çalışır"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "En son katman hariç kapsayıcı imajındaki tüm katmanlar salt okunur (read-only) durumdadır. Bu katmanlama yöntemi temel kapsayıcı imajlarının yeniden kullanılabilirliğini mümkün kılar."
+  },
+  {
+    "soru": "Sidecar kapsayıcı tasarım deseni hangi sorunu çözer?",
+    "secenekler": [
+      "Uygulamalar arası ağ iletişim sorunlarını",
+      "Uygulamanın hem birincil iş mantığını hem de yardımcı işlemleri (log toplama, sıkıştırma vb.) yürütme yükünü taşıması sorununu",
+      "Veri tabanı bağlantı sorunlarını",
+      "Konteyner imaj güncelleme sorunlarını"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Sidecar kapsayıcı, uygulamanın hem birincil iş mantığını hem de yardımcı işlemleri yürütme yükünden kurtarmak için yardımcı işlemleri soyutlayan ikincil bir bileşendir."
+  },
+  {
+    "soru": "Adaptör Kapsayıcı (Adapter Container) hangi işlemi üstlenir?",
+    "secenekler": [
+      "Güvenlik denetimi işlemlerini",
+      "Harici tüketici uygulamalara uyum sağlamak için gerekli veri dönüştürme işlemlerini",
+      "Ağ trafiği yönlendirmesini",
+      "Depolama yönetimini"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Adaptör kapsayıcı, uygulamadan harici tüketici uygulamalara uyum sağlamak için gerekli veri dönüştürme işlemlerini soyutlayarak uygulamanın yalnızca iş mantığına odaklanmasını sağlar."
+  },
+  {
+    "soru": "Elçi (Ambassador) Kapsayıcı hangi görevi üstlenir?",
+    "secenekler": [
+      "Veri dönüştürme işlemlerini",
+      "Harici tüketici uygulamalarla bağlantı kurmak için gereken dış iletişim işlemlerini",
+      "Güvenlik tarama işlemlerini",
+      "Depolama yedekleme işlemlerini"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Elçi kapsayıcı, uygulamanın harici tüketici uygulamalarla bağlantı kurmak için gereken iletişim işlemlerini üstlenir; böylece uygulama yalnızca iş mantığını yürütmeye odaklanabilir."
+  },
+  {
+    "soru": "Konteyner orkestrasyon sürecinin hangi adımında kapsayıcı imajı kayıt deposuna gönderilir?",
+    "secenekler": [
+      "Uygulama dağıtımının tanımlanmasından sonra",
+      "Kapsayıcı imajı oluşturulduktan hemen sonra",
+      "Uygulama izleme sürecinde",
+      "Ölçeklendirme kararı alındıktan sonra"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Konteyner orkestrasyon sürecinde; önce imaj oluşturulur, ardından oluşturulan kapsayıcı imajı merkezi ve uzaktaki bir depo olan kapsayıcı kayıt deposuna yüklenir."
+  },
+  {
+    "soru": "Kapsayıcı paket yöneticisi ile kapsayıcı orkestratörü arasındaki soyutlama seviyesi farkı nedir?",
+    "secenekler": [
+      "İkisi de aynı soyutlama seviyesinde çalışır",
+      "Paket yöneticileri bireysel imajlar ve bağımlılıklarla ilgilenerek düşük seviyede çalışırken, orkestratörler tüm uygulamayı yüksek seviyeden yönetir",
+      "Orkestratörler daha düşük seviyede çalışır",
+      "Paket yöneticileri yalnızca ağ yönetimi yapar"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Kapsayıcı paket yöneticileri daha düşük soyutlama seviyesinde bireysel imajlar ve bağımlılıklarla ilgilenirken, kapsayıcı orkestratörleri tüm kapsayıcılaştırılmış uygulamayı yüksek seviyeden yönetir."
+  },
+  {
+    "soru": "Bilgi güvenliğinin CIA triadında 'Gizlilik (Confidentiality)' nasıl tanımlanır?",
+    "secenekler": [
+      "Bir bilginin yetkisiz taraflarca değiştirilmemesi",
+      "Bir bilginin yalnızca yetkili tarafların erişimine açık olması",
+      "Bir sistemin belirli bir zaman dilimi boyunca kullanılabilir olması",
+      "Bir işlemin yetkili bir kaynak tarafından gerçekleştirildiğinin doğrulanması"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Gizlilik, bir bilginin yalnızca yetkili tarafların erişimine açık olması durumunu ifade eder; bulut ortamlarında esas olarak taşınan ve depolanan verilere erişimin sınırlandırılmasıyla ilgilidir."
+  },
+  {
+    "soru": "'Bütünlük (Integrity)' güvenlik ilkesinin ihlal edildiği durum hangisidir?",
+    "secenekler": [
+      "Sisteme yetkisiz giriş yapılması",
+      "Bir bilginin yetkisiz bir tarafça değiştirilmesi",
+      "Sistemin kullanılamaz hale gelmesi",
+      "Kullanıcı kimlik bilgilerinin çalınması"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Bütünlük, bir bilginin yetkisiz bir tarafça değiştirilmemiş olması durumunu ifade eder; bütünlük ihlali, verinin yetkisiz kişilerce değiştirilmesi anlamına gelir."
+  },
+  {
+    "soru": "'Doğruluk/Gerçeklik (Authenticity)' kavramı hangi ilkeyi de kapsar?",
+    "secenekler": [
+      "Erişilebilirlik (availability)",
+      "İnkâr edilemezlik (non-repudiation)",
+      "Gizlilik (confidentiality)",
+      "Bütünlük (integrity)"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Doğruluk kavramı, bir bilginin veya işlemin yetkili bir kaynak tarafından sağlandığını gösterir ve aynı zamanda inkâr edilemezlik (non-repudiation) ilkesini de kapsar."
+  },
+  {
+    "soru": "Güvenlik politikası ne içerir?",
+    "secenekler": [
+      "Yalnızca teknik güvenlik araçlarının listesi",
+      "Hassas ve kritik BT kaynaklarının azami düzeyde korunması amacıyla bir sistemin, hizmetin veya güvenlik planının nasıl uygulanacağını belirten kural ve uygulamalar bütünü",
+      "Yalnızca çalışan erişim haklarının listesi",
+      "Fiziksel güvenlik önlemlerinin kataloğu"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Güvenlik politikası; hassas ve kritik BT kaynaklarının azami düzeyde korunması amacıyla bir sistemin, hizmetin veya güvenlik planının nasıl uygulanacağını belirten kural ve uygulamalar bütününü içerir."
+  },
+  {
+    "soru": "'Sıfır Gün Zafiyeti (Zero-Day Vulnerability)' nasıl tanımlanır?",
+    "secenekler": [
+      "Yeni keşfedilen ve hemen yamalanan güvenlik açığı",
+      "Bir kuruluşun ya henüz farkında olmadığı ya da farkında olsa bile henüz bir yamayla gideremediği güvenlik açığı",
+      "Yalnızca ağ düzeyinde var olan güvenlik açığı",
+      "Donanım kaynaklı güvenlik açığı"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Sıfır gün zafiyeti, bir kuruluşun ya henüz farkında olmadığı ya da farkında olsa bile henüz bir yamayla (güncellemeyle) gideremediği güvenlik açığıdır."
+  },
+  {
+    "soru": "Veri ihlali (data breach) ile veri sızıntısı (data leak) arasındaki temel fark nedir?",
+    "secenekler": [
+      "Veri ihlalinde daha az veri etkilenir",
+      "Veri sızıntısı herhangi bir saldırı gerçekleşmeden hassas bilgilerin yetkisiz kişilere açık hale gelmesi iken, veri ihlali bir saldırgan tarafından gizli bilgilerin ele geçirilmesidir",
+      "İkisi aynı anlama gelir",
+      "Veri sızıntısı yalnızca iç kaynaklı olabilir"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Veri sızıntısı herhangi bir saldırı gerçekleşmeden hassas bilgilerin yetkisiz erişime açık hale gelmesidir; veri ihlali ise bir saldırganın güvenlik mekanizmalarını aşarak gizli bilgileri ele geçirdiği bir güvenlik ihlali türüdür."
+  },
+  {
+    "soru": "DLP (Data Loss Prevention) sistemleri ne için kullanılır?",
+    "secenekler": [
+      "Sisteme yetkisiz erişimi engellemek için",
+      "Veri sızıntısını önlemek için",
+      "Ağ trafiğini şifrelemek için",
+      "Konteyner güvenliğini sağlamak için"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "DLP (Data Loss Prevention) sistemleri, veri sızıntısını önlemek için kullanılır. Google Cloud DLP ve AWS Macie bu tür sistemlere örnek gösterilebilir."
+  },
+  {
+    "soru": "Anonim saldırgan (anonymous attacker) nasıl karakterize edilir?",
+    "secenekler": [
+      "Bulut ortamında yetkili erişime sahip bir iç çalışan",
+      "Bulut ortamında yetkisi olmayan, güvenilmeyen bir bulut hizmeti kullanıcısı; genellikle ağ düzeyinde saldırılar gerçekleştiren harici bir yazılım programı",
+      "Meşru kimlik bilgilerini kötüye kullanan yetkili bir kiracı",
+      "Bulut sağlayıcısı personeli"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Anonim saldırgan, bulut ortamında yetkisi olmayan, güvenilmeyen bir bulut hizmeti kullanıcısıdır. Genellikle ağ düzeyinde saldırılar gerçekleştiren harici bir yazılım programı olarak varlık gösterir."
+  },
+  {
+    "soru": "Kötü Niyetli Hizmet Aracısı (Malicious Service Agent) ne yapar?",
+    "secenekler": [
+      "Yalnızca depolama kaynaklarına saldırır",
+      "Bulut ortamı içinde akan ağ trafiğini yakalayabilir ve yönlendirebilir",
+      "Yalnızca kullanıcı arayüzü üzerinden saldırır",
+      "Yalnızca şifreli trafiği hedef alır"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Kötü niyetli bir hizmet aracısı, bulut ortamı içinde akan ağ trafiğini yakalayabilir ve yönlendirebilir; zararlı veya ele geçirilmiş bir mantığa sahip olup iletilerin içeriğini bozabilir."
+  },
+  {
+    "soru": "Güvenilir saldırgan (trusted attacker) diğer saldırgan türlerinden nasıl ayrılır?",
+    "secenekler": [
+      "Dış ağlardan saldırı yapar",
+      "Bulut hizmeti kullanıcısıyla aynı bulut ortamında kaynakları paylaşan ve meşru kimlik bilgilerini kötüye kullanan kişidir",
+      "Yalnızca fiziksel altyapıya saldırır",
+      "Anonim kimlikle hareket eder"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Güvenilir saldırgan, bulut hizmeti kullanıcısıyla aynı bulut ortamında BT kaynaklarını paylaşan ve meşru kimlik bilgilerini kötüye kullanarak saldırılarını bulutun güven sınırları içerisinden gerçekleştiren kişidir."
+  },
+  {
+    "soru": "Kötü Niyetli İç Tehdit Unsuru (Malicious Insider) kim olabilir?",
+    "secenekler": [
+      "Yalnızca dış kaynaklı saldırganlar",
+      "Bulut sağlayıcısı adına hareket eden mevcut veya eski çalışanlar ya da tesislere erişimi olan üçüncü taraflar",
+      "Yalnızca siber suçlular",
+      "Yalnızca devlet destekli saldırganlar"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Kötü niyetli iç tehdit unsurları, bulut sağlayıcısı adına ya da onunla ilişkili olarak hareket eden insan kaynaklı tehdit aktörleridir; genellikle mevcut veya eski çalışanlar ya da tesislere erişimi olan üçüncü taraf kaynakları olabilir."
+  },
+  {
+    "soru": "Trafik Dinleme (Traffic Eavesdropping) saldırısı nasıl gerçekleşir?",
+    "secenekler": [
+      "Verilerin aktif olarak değiştirilmesiyle",
+      "Buluta gönderilen ya da bulut içinde aktarılan verilerin kötü niyetli bir hizmet aracısı tarafından pasif bir şekilde yakalanmasıyla",
+      "Sisteme yetkisiz erişim sağlanmasıyla",
+      "Sahte kimlik bilgileriyle giriş yapılmasıyla"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Trafik dinleme, buluta gönderilen ya da bulut içinde aktarılan verilerin kötü niyetli bir hizmet aracısı tarafından pasif bir şekilde yakalanması durumudur."
+  },
+  {
+    "soru": "Hizmet Dışı Bırakma (DoS) saldırısının temel amacı nedir?",
+    "secenekler": [
+      "Gizli verileri çalmak",
+      "BT kaynaklarını aşırı yükleyerek düzgün çalışamaz hale getirmek",
+      "Sisteme yetkisiz erişim sağlamak",
+      "Kullanıcı kimlik bilgilerini ele geçirmek"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Hizmet Dışı Bırakma (DoS) saldırısının amacı, BT kaynaklarını aşırı yükleyerek düzgün çalışamaz hale getirmektir; sahte iletiler, tekrarlanan talepler veya aşırı kaynak tüketen istekler aracılığıyla gerçekleştirilir."
+  },
+  {
+    "soru": "Sanallaştırma saldırısı (virtualization attack) ne amaçlamaktadır?",
+    "secenekler": [
+      "Yalnızca ağ trafiğini yönlendirmek",
+      "Sanallaştırma platformundaki zafiyetleri sömürerek platformun gizliliğini, bütünlüğünü ve/veya erişilebilirliğini tehlikeye atmak",
+      "Yalnızca sanal makineleri silmek",
+      "Fiziksel sunuculara doğrudan erişim sağlamak"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Sanallaştırma saldırısı, sanallaştırma platformundaki zafiyetleri sömürerek platformun gizliliğini, bütünlüğünü ve/veya erişilebilirliğini tehlikeye atmayı amaçlar."
+  },
+  {
+    "soru": "Konteyner tabanlı saldırının (containerization attack) en önemli riski nedir?",
+    "secenekler": [
+      "Konteyner imajlarının bozulması",
+      "Aynı makinede konuşlandırılan konteynerlerin aynı ana işletim sistemini paylaşması nedeniyle alttaki ana sistem ele geçirilirse o sistemdeki tüm konteynerlerin etkilenmesi",
+      "Ağ trafiğinin şifrelenmemesi",
+      "Depolama birimlerinin kaybolması"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Konteyner tabanlı yapıların kullanımı, ana işletim sistemi düzeyinde yalıtım eksikliğini beraberinde getirir. Alttaki ana sistem ele geçirilirse o sistemde çalışan tüm konteynerler etkilenebilir."
+  },
+  {
+    "soru": "Fidye Yazılımı (Ransomware) nedir?",
+    "secenekler": [
+      "Reklam görüntülemek için tasarlanmış yazılım",
+      "Verilerin kullanımını ya da erişimini kısıtlayan veya engelleyen, karşılığında ücret talep eden kötü amaçlı yazılım",
+      "Sisteme virüs bulaştıran kötü amaçlı yazılım",
+      "Ağ trafiğini izleyen yazılım"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Fidye yazılımı, verilerin kullanımını ya da erişimini kısıtlayan veya engelleyen, karşılığında bir ücret talep eden kötü amaçlı yazılımdır; uzaktan kod yürütme yoluyla da gerçekleştirilebilir."
+  },
+  {
+    "soru": "Kripto Madenciliği Yazılımı (Crypto Jacking) nasıl çalışır?",
+    "secenekler": [
+      "Kripto para cüzdanlarını çalarak",
+      "Web içeriklerine gömülü script'leri çalıştırarak kullanıcının bilgisi ve rızası olmadan tarayıcı tabanlı kripto para madenciliği yaparak",
+      "Kripto para borsalarına DDoS saldırısı yaparak",
+      "Kullanıcı hesaplarını ele geçirerek"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Kripto madenciliği yazılımı, web içeriklerine gömülü script'leri çalıştırarak kullanıcının bilgisi ve rızası olmadan tarayıcı tabanlı kripto para madenciliği yapılmasını sağlar."
+  },
+  {
+    "soru": "Truva Atı (Trojan) kötü amaçlı yazılımının temel özelliği nedir?",
+    "secenekler": [
+      "Ağ üzerinden kendiliğinden yayılması",
+      "Meşru bir uygulama veya hizmet gibi görünen ve arka planda zararlı faaliyetler gerçekleştiren kötü amaçlı yazılım",
+      "Yalnızca dosyaları şifrelemesi",
+      "Reklamlar göstermesi"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Truva Atı (Trojan), meşru bir uygulama veya hizmet gibi görünen kötü amaçlı yazılım parçasıdır; genellikle arka planda çalışarak arka kapı kodu yükleme, işlemlere kod enjekte etme gibi zararlı faaliyetler gerçekleştirir."
+  },
+  {
+    "soru": "Botnet saldırısı nasıl gerçekleşir?",
+    "secenekler": [
+      "Tek bir cihazdan yoğun trafik göndererek",
+      "Farklı cihazlara yayılmış birden fazla botun eşgüdümlü bir ağ aracılığıyla saldırı gerçekleştirmesiyle",
+      "Yalnızca şifreli iletişim kanalları aracılığıyla",
+      "Yalnızca iç ağ üzerinden"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Botnet saldırısı, farklı cihazlara yayılmış birden fazla botun eşgüdümlü bir ağ (bot ağı – botnet) aracılığıyla saldırı gerçekleştirmesiyle ortaya çıkar; DDoS, kripto madenciliği, spam ve veri hırsızlığı için kullanılabilir."
+  },
+  {
+    "soru": "Kaba Kuvvet Saldırısı (Brute Force) nedir?",
+    "secenekler": [
+      "Sisteme fiziksel olarak erişim sağlamak",
+      "Bir saldırganın doğru kombinasyonu bulmak için çok sayıda olası kullanıcı adı ve parola kombinasyonunu denemesi",
+      "Ağ trafiğini izinsiz dinlemek",
+      "Yazılım açıklarını sömürmek"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Kaba kuvvet saldırısında saldırgan, doğru kombinasyonu bulmak ve böylece yetkisiz şekilde sisteme erişim sağlamak amacıyla çok sayıda olası kullanıcı adı ve parola kombinasyonunu dener."
+  },
+  {
+    "soru": "Uzaktan Kod Yürütme (Remote Code Execution) saldırısı nasıl başlar?",
+    "secenekler": [
+      "Fiziksel sunucuya el konulmasıyla",
+      "Genellikle otomatik tarama araçları kullanarak sistemdeki zafiyetleri tespit etmeyi amaçlayan bir bilgi toplama süreciyle",
+      "Kullanıcı şifrelerinin tahmin edilmesiyle",
+      "Sosyal mühendislik saldırısıyla"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Uzaktan kod yürütme saldırısı, genellikle bir bilgi toplama süreciyle başlar; saldırgan otomatik tarama araçları kullanarak sistemdeki zafiyetleri tespit etmeye çalışır."
+  },
+  {
+    "soru": "SQL Enjeksiyonu (SQL Injection) saldırısı nasıl çalışır?",
+    "secenekler": [
+      "Ağ trafiğini değiştirerek",
+      "Kötü amaçlı SQL ifadelerinden oluşan kodun bir web uygulamasının kullanıcı arayüzündeki giriş alanına yerleştirilerek web uygulama sunucusunun zararlı kodu çalıştırmasının sağlanmasıyla",
+      "Sistem dosyalarını şifreleyerek",
+      "Sahte SSL sertifikaları kullanarak"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "SQL enjeksiyonu, kötü amaçlı SQL ifadelerinden oluşan kodun bir web uygulamasının kullanıcı arayüzündeki giriş alanına yerleştirilerek web uygulama sunucusunun bu zararlı kodu çalıştırmasının sağlandığı bir saldırı tekniğidir."
+  },
+  {
+    "soru": "Tünelleme (Tunneling) tekniği siber saldırılarda ne amaçla kullanılır?",
+    "secenekler": [
+      "Ağ hızını artırmak için",
+      "Verilerin yetkili bir protokol paketine gömülerek güvenlik duvarı kontrollerinin atlatılması ve hassas verilerin ağdan dışarı çıkarılması ya da zararlı verilerin ağa sokulması için",
+      "Veri şifrelemesini güçlendirmek için",
+      "Yük dengeleme sağlamak için"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Tünelleme, verilerin yetkili bir protokol paketine gömülerek güvenlik duvarı kontrollerinin atlatılmasını sağlar; bu yöntemle hassas veriler ağdan dışarı çıkabilir ve yetkisiz ya da zararlı veriler ağa girebilir."
+  },
+  {
+    "soru": "Gelişmiş Kalıcı Tehdit (APT - Advanced Persistent Threat) nasıl karakterize edilir?",
+    "secenekler": [
+      "Kısa süreli ve rastgele gerçekleştirilen saldırılar",
+      "Uzun bir zaman dilimine yayılmış, eşgüdümlü şekilde gerçekleştirilen ve kuruluşun ortamında kalıcı olarak yerleşmeyi hedefleyen saldırılar",
+      "Yalnızca ağ trafiğini izleme amaçlı saldırılar",
+      "Yalnızca DDoS saldırıları"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "APT'ler uzun bir zaman dilimine yayılmış, eşgüdümlü şekilde gerçekleştirilir; temel hedeflerinden biri bir güvenlik ihlali yoluyla kuruluşun sistemine erişim sağladıktan sonra ortamında kalıcı olarak yerleşmektir."
+  },
+  {
+    "soru": "Sosyal mühendislik saldırısı nasıl tanımlanır?",
+    "secenekler": [
+      "Teknik güvenlik açıklarını sömüren saldırı türü",
+      "Bireylerin hassas bilgileri ifşa etmeye veya zarar verici eylemler gerçekleştirmeye ikna edilerek kandırıldığı saldırı türü",
+      "Yazılım açıklarını sömüren saldırı türü",
+      "Ağ trafiğini izleyen saldırı türü"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Sosyal mühendislik, bireylerin hassas bilgileri ifşa etmeye veya zarar verici eylemler gerçekleştirmeye (örneğin yetkisiz kişilere erişim izni vermek gibi) ikna edilerek kandırıldığı bir saldırı türüdür."
+  },
+  {
+    "soru": "Yetki Yükseltme (Privilege Escalation) saldırısı nedir?",
+    "secenekler": [
+      "Ağ erişim haklarının genişletilmesi",
+      "Bir saldırganın sınırlı erişim yetkilerine sahip bir kullanıcı hesabını ele geçirdikten sonra yönetici (admin) yetkileri kazanmaya çalıştığı durum",
+      "Güvenlik politikalarının güncellenmesi",
+      "Kullanıcı hesabının devre dışı bırakılması"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Yetki yükseltme, bir saldırganın sınırlı erişim yetkilerine sahip bir kullanıcı hesabını ele geçirdikten sonra yönetici (admin) yetkileri kazanmaya çalıştığı durumlarda meydana gelir."
+  },
+  {
+    "soru": "Risk yönetimi sürecinin üç temel aşaması nelerdir?",
+    "secenekler": [
+      "Planlama, uygulama ve test etme",
+      "Risk değerlendirmesi, riskin bertaraf edilmesi ve riskin kontrolü",
+      "Tehdit analizi, zafiyet taraması ve saldırı simülasyonu",
+      "Şifreleme, yetkilendirme ve denetleme"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Risk yönetimi süreci üç aşamadan oluşur: Risk Değerlendirmesi (tehditlerin belirlenmesi), Riskin Bertaraf Edilmesi (azaltma politikaları) ve Riskin Kontrolü (izleme ve düzeltme)."
+  },
+  {
+    "soru": "'İhmalkâr (Negligent)' iç tehdit türü nasıl tanımlanır?",
+    "secenekler": [
+      "Kasıtlı olarak sisteme zarar vermek isteyen çalışan",
+      "Dikkatsizlik ya da mevcut siber güvenlik standartları ve politikalarına uymama isteksizliği sonucu içeriden kaynaklanan zarar",
+      "Bilgisizlik nedeniyle yanlışlıkla dosya silen çalışan",
+      "Dış kaynaklı saldırganlarla işbirliği yapan çalışan"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "İhmalkâr iç tehdit, dikkatsizlik ya da mevcut siber güvenlik standartları ve politikalarına uymama isteksizliği sonucu içeriden kaynaklanan zararlardır."
+  },
+  {
+    "soru": "CIEM (Cloud Infrastructure Entitlement Management) teknolojisi ne için kullanılır?",
+    "secenekler": [
+      "Konteyner imajlarını yönetmek için",
+      "Bulutta kim hangi kaynağa hangi yetkiyle erişiyor onu yönetmek ve denetlemek, böylece veri ihlalini önlemek için",
+      "Ağ trafiğini şifrelemek için",
+      "Sanallaştırma altyapısını yönetmek için"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "CIEM (Cloud Infrastructure Entitlement Management), bulutta veri ihlalinin önlenmesi için kullanılan; kim hangi kaynağa hangi yetkiyle erişiyor bunu yöneten ve denetleyen bir teknolojidir."
+  },
+  {
+    "soru": "'Çakışan Güven Sınırları (Overlapping Trust Boundaries)' ne anlama gelir?",
+    "secenekler": [
+      "Birden fazla güvenlik politikasının çakışması",
+      "Bir bulut ortamındaki fiziksel BT kaynaklarının farklı bulut hizmeti kullanıcıları tarafından paylaşılması durumu",
+      "Farklı şifreleme algoritmalarının birlikte kullanılması",
+      "Ağ güvenlik duvarlarının çakışan kuralları"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Bir bulut ortamındaki fiziksel BT kaynakları farklı bulut hizmeti kullanıcıları tarafından paylaşılıyorsa, bu kullanıcılar çakışan güven sınırlarına sahip olur; bu durum güvenlik risklerini artırır."
+  },
+  {
+    "soru": "Solucan (Worm) kötü amaçlı yazılımının ayırt edici özelliği nedir?",
+    "secenekler": [
+      "Yalnızca dosyaları şifrelemesi",
+      "Kendi kendini çoğaltan, ağ mekanizmalarını kullanarak bağımsız çalışan ve yayılabilen program",
+      "Kullanıcı etkileşimi gerektirmesi",
+      "Yalnızca e-posta yoluyla yayılması"
+    ],
+    "dogru_cevap_indeksi": 1,
+    "aciklama": "Solucan (Worm), kendi kendini çoğaltan, yayılabilen ve bağımsız çalışan bir programdır; ağ üzerinden yayılmak için ağ mekanizmalarını kullanır ve genellikle hesaplama kaynaklarını tüketmenin ötesinde doğrudan zarar vermez."
+  }
+]

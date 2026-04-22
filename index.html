@@ -422,6 +422,49 @@
     .btn-secondary:hover {
       background: rgba(37, 99, 235, 0.08);
     }
+
+    .section-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      margin: 1.1rem 0 0.4rem;
+      text-align: left;
+    }
+
+    .section-label:first-child {
+      margin-top: 0.1rem;
+    }
+
+    .nav-row {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .btn-nav {
+      flex: 1;
+      padding: 0.65rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--card);
+      color: var(--text);
+      cursor: pointer;
+      transition: border-color 0.15s, background 0.15s;
+    }
+
+    .btn-nav:hover:not(:disabled) {
+      border-color: var(--accent);
+      background: #f8fafc;
+    }
+
+    .btn-nav:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
   </style>
 </head>
 <body>
@@ -439,8 +482,11 @@
 
       <div id="selectView" class="select-view" hidden>
         <h3>Test seçin</h3>
-        <p class="select-hint">100 soru üç bölüme ayrılmıştır (35 + 35 + 30). İstediğiniz bölümle başlayın.</p>
+        <p class="select-hint">İstediğiniz aşama ve bölümden başlayın.</p>
+        <p class="section-label">1. Aşama Sorular</p>
         <div class="test-cards" id="testCards"></div>
+        <p class="section-label">2. Aşama Sorular</p>
+        <div class="test-cards" id="testCards2"></div>
       </div>
 
       <div id="quizView" class="quiz-view" hidden>
@@ -465,6 +511,10 @@
         <div id="explanationBox" class="explanation" hidden>
           <div class="explanation-title">Açıklama</div>
           <div id="explanationText"></div>
+        </div>
+        <div class="nav-row">
+          <button type="button" id="btnPrev" class="btn-nav" disabled>← Önceki</button>
+          <button type="button" id="btnNextQ" class="btn-nav" disabled>Sonraki →</button>
         </div>
         <div class="actions">
           <button type="button" id="btnNext" class="btn-primary" disabled>Sonraki Soru</button>
@@ -508,6 +558,7 @@
       const elError = document.getElementById("stateError");
       const selectView = document.getElementById("selectView");
       const testCards = document.getElementById("testCards");
+      const testCards2 = document.getElementById("testCards2");
       const quizView = document.getElementById("quizView");
       const resultsView = document.getElementById("resultsView");
       const progressLabel = document.getElementById("progressLabel");
@@ -519,6 +570,8 @@
       const explanationBox = document.getElementById("explanationBox");
       const explanationText = document.getElementById("explanationText");
       const btnNext = document.getElementById("btnNext");
+      const btnPrev = document.getElementById("btnPrev");
+      const btnNextQ = document.getElementById("btnNextQ");
       const btnBackToTests = document.getElementById("btnBackToTests");
       const resultRing = document.getElementById("resultRing");
       const resultPercentText = document.getElementById("resultPercentText");
@@ -526,7 +579,8 @@
       const statWrong = document.getElementById("statWrong");
       const btnRestart = document.getElementById("btnRestart");
 
-      let allQuestions = [];
+      let allQuestions = [];   // sorular.json (1. Aşama)
+      let allQuestions2 = [];  // sorular2.json (2. Aşama)
       let questions = [];
       let partMeta = null;
       let currentIndex = 0;
@@ -536,6 +590,7 @@
 
       const CIRC = 2 * Math.PI * 40;
 
+      // 1. Aşama: 100 soru → 3 bölüm (35+35+30)
       function buildParts(total) {
         if (total === 100) {
           return [
@@ -547,28 +602,30 @@
         var a = Math.ceil(total / 3);
         var b = Math.ceil((total - a) / 2);
         var c = total - a - b;
-        var s0 = 0;
-        var s1 = s0 + a;
+        var s0 = 0, s1 = s0 + a;
         return [
-          {
-            start: s0,
-            len: a,
-            title: "Test 1",
-            rangeLabel: s0 + 1 + "–" + (s0 + a)
-          },
-          {
-            start: s1,
-            len: b,
-            title: "Test 2",
-            rangeLabel: s1 + 1 + "–" + (s1 + b)
-          },
-          {
-            start: s1 + b,
-            len: c,
-            title: "Test 3",
-            rangeLabel: s1 + b + 1 + "–" + total
-          }
+          { start: s0, len: a, title: "Test 1", rangeLabel: (s0 + 1) + "–" + (s0 + a) },
+          { start: s1, len: b, title: "Test 2", rangeLabel: (s1 + 1) + "–" + (s1 + b) },
+          { start: s1 + b, len: c, title: "Test 3", rangeLabel: (s1 + b + 1) + "–" + total }
         ];
+      }
+
+      // 2. Aşama: 100 soru → 5 bölüm (20'şer)
+      function buildParts2(total) {
+        var perChunk = Math.ceil(total / 5);
+        var parts = [];
+        for (var i = 0; i < 5; i++) {
+          var start = i * perChunk;
+          var len = (i < 4) ? perChunk : total - start;
+          if (len <= 0) break;
+          parts.push({
+            start: start,
+            len: len,
+            title: "Test " + (i + 1),
+            rangeLabel: (start + 1) + "–" + (start + len)
+          });
+        }
+        return parts;
       }
 
       function showLoading(show) {
@@ -593,17 +650,16 @@
       }
 
       function computeResults() {
-        var c = 0;
-        var w = 0;
-        var a = 0;
+        var c = 0, w = 0, a = 0;
         answerStates.forEach(function (s) {
-          if (s) {
-            a++;
-            if (s.correct) c++;
-            else w++;
-          }
+          if (s) { a++; if (s.correct) c++; else w++; }
         });
         return { correct: c, wrong: w, answered: a, total: questions.length };
+      }
+
+      function updateNavButtons() {
+        btnPrev.disabled = currentIndex === 0;
+        btnNextQ.disabled = currentIndex >= questions.length - 1;
       }
 
       function fillJumpSelect() {
@@ -627,14 +683,14 @@
         var n = currentIndex + 1;
         var globalNum = partMeta.start + currentIndex + 1;
 
-        progressLabel.textContent =
-          partMeta.title + " · Soru " + n + " / " + total;
+        progressLabel.textContent = partMeta.title + " · Soru " + n + " / " + total;
         progressFill.style.width = total ? ((n / total) * 100).toFixed(2) + "%" : "0%";
         globalQuestionHint.textContent =
-          "Genel soru numarası: " + globalNum + " (tüm testler 1–" + allQuestions.length + ")";
+          "Genel soru numarası: " + globalNum + " (toplam " + partMeta.sourceTotal + ")";
         globalQuestionHint.hidden = false;
 
         fillJumpSelect();
+        updateNavButtons();
 
         questionText.textContent = q.soru;
         optionsContainer.innerHTML = "";
@@ -694,10 +750,7 @@
         var correctIdx = q.dogru_cevap_indeksi;
         var isCorrect = selected === correctIdx;
 
-        answerStates[currentIndex] = {
-          selectedIndex: selected,
-          correct: isCorrect
-        };
+        answerStates[currentIndex] = { selectedIndex: selected, correct: isCorrect };
 
         var buttons = optionsContainer.querySelectorAll(".option-btn");
         buttons.forEach(function (b) {
@@ -723,11 +776,9 @@
       function showResults() {
         quizView.hidden = true;
         resultsView.hidden = false;
-
         var r = computeResults();
         var denom = r.correct + r.wrong;
         var pct = denom ? (r.correct / denom) * 100 : 0;
-
         statCorrect.textContent = String(r.correct);
         statWrong.textContent = String(r.wrong);
         setRingPercent(pct);
@@ -735,22 +786,36 @@
 
       function onNext() {
         if (!answerStates[currentIndex]) return;
-        if (currentIndex >= questions.length - 1) {
-          showResults();
-          return;
-        }
+        if (currentIndex >= questions.length - 1) { showResults(); return; }
         currentIndex++;
         renderQuestion();
       }
 
-      function startPart(partIndex, parts) {
+      function onPrev() {
+        if (currentIndex <= 0) return;
+        currentIndex--;
+        renderQuestion();
+      }
+
+      function onNextQ() {
+        if (currentIndex >= questions.length - 1) return;
+        currentIndex++;
+        renderQuestion();
+      }
+
+      // source: 'phase1' | 'phase2'
+      function startPart(partIndex, parts, source, pool) {
         var p = parts[partIndex];
-        partMeta = p;
-        questions = allQuestions.slice(p.start, p.start + p.len);
+        partMeta = {
+          start: p.start,
+          len: p.len,
+          title: p.title,
+          rangeLabel: p.rangeLabel,
+          sourceTotal: pool.length
+        };
+        questions = pool.slice(p.start, p.start + p.len);
         currentIndex = 0;
-        answerStates = questions.map(function () {
-          return null;
-        });
+        answerStates = questions.map(function () { return null; });
         selectView.hidden = true;
         resultsView.hidden = true;
         quizView.hidden = false;
@@ -767,6 +832,28 @@
         selectView.hidden = false;
       }
 
+      function buildCards(container, parts, pool, source) {
+        container.innerHTML = "";
+        parts.forEach(function (p, idx) {
+          var b = document.createElement("button");
+          b.type = "button";
+          b.className = "test-card";
+          b.setAttribute("aria-label", p.title + ", sorular " + p.rangeLabel);
+          var t = document.createElement("span");
+          t.className = "test-card-title";
+          t.textContent = p.title + " — Soru " + p.rangeLabel;
+          var m = document.createElement("span");
+          m.className = "test-card-meta";
+          m.textContent = p.len + " soru";
+          b.appendChild(t);
+          b.appendChild(m);
+          b.addEventListener("click", function () {
+            startPart(idx, parts, source, pool);
+          });
+          container.appendChild(b);
+        });
+      }
+
       jumpSelect.addEventListener("change", function () {
         if (jumpIgnore) return;
         var v = parseInt(jumpSelect.value, 10) - 1;
@@ -776,49 +863,53 @@
       });
 
       btnNext.addEventListener("click", onNext);
+      btnPrev.addEventListener("click", onPrev);
+      btnNextQ.addEventListener("click", onNextQ);
       btnRestart.addEventListener("click", goToTestSelection);
       btnBackToTests.addEventListener("click", goToTestSelection);
 
-      fetch("./sorular.json")
-        .then(function (res) {
-          if (!res.ok) throw new Error("Dosya okunamadı (" + res.status + ")");
-          return res.json();
+      Promise.all([
+        fetch("./sorular.json").then(function (r) {
+          if (!r.ok) throw new Error("sorular.json okunamadı (" + r.status + ")");
+          return r.json();
+        }),
+        fetch("./sorular2.json").then(function (r) {
+          if (!r.ok) throw new Error("sorular2.json okunamadı (" + r.status + ")");
+          return r.json();
         })
-        .then(function (data) {
-          if (!Array.isArray(data) || data.length === 0) {
-            showError("Soru listesi boş veya geçersiz.");
+      ])
+        .then(function (results) {
+          var data1 = results[0];
+          var data2 = results[1];
+
+          if (!Array.isArray(data1) || data1.length === 0) {
+            showError("1. Aşama soru listesi boş veya geçersiz.");
             return;
           }
-          allQuestions = data;
-          var parts = buildParts(allQuestions.length);
-          testCards.innerHTML = "";
-          parts.forEach(function (p, idx) {
-            var b = document.createElement("button");
-            b.type = "button";
-            b.className = "test-card";
-            b.setAttribute("aria-label", p.title + ", sorular " + p.rangeLabel);
-            var t = document.createElement("span");
-            t.className = "test-card-title";
-            t.textContent = p.title + " — Soru " + p.rangeLabel;
-            var m = document.createElement("span");
-            m.className = "test-card-meta";
-            m.textContent = p.len + " soru";
-            b.appendChild(t);
-            b.appendChild(m);
-            b.addEventListener("click", function () {
-              startPart(idx, parts);
-            });
-            testCards.appendChild(b);
-          });
+          if (!Array.isArray(data2) || data2.length === 0) {
+            showError("2. Aşama soru listesi boş veya geçersiz.");
+            return;
+          }
+
+          allQuestions = data1;
+          allQuestions2 = data2;
+
+          var parts1 = buildParts(allQuestions.length);
+          var parts2 = buildParts2(allQuestions2.length);
+
+          buildCards(testCards, parts1, allQuestions, "phase1");
+          buildCards(testCards2, parts2, allQuestions2, "phase2");
+
           showLoading(false);
           elError.hidden = true;
           selectView.hidden = false;
           quizView.hidden = true;
           resultsView.hidden = true;
         })
-        .catch(function () {
+        .catch(function (err) {
           showError(
-            "Sorular yüklenemedi. Bu sayfayı bir yerel sunucu üzerinden açın (ör. main klasöründe: python -m http.server) veya sorular.json ile aynı kökten sunun."
+            "Sorular yüklenemedi: " + (err && err.message ? err.message : "") +
+            ". Bu sayfayı bir yerel sunucu üzerinden açın (ör: python -m http.server)."
           );
         });
     })();
